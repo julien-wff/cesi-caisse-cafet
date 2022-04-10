@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+    postgresql:
+        volumes:
+            - ./postgresql/database:/var/lib/postgresql/data
+        ports:
+            -   "5432:5432"
+    directus:
+        ports:
+            - "8055:8055"
+
+networks:
+    directus:
+        external: false
+
+volumes:
+    postgresql:
+        name: "postgresql"
+        external: false
