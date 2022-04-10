@@ -15,5 +15,5 @@ développement `docker-compose.dev.yml`
 
 ## Production
 
-Pour lancer en mode production, créer le network `directus` et le volume `postgresql`, puis lancer la
+Pour lancer en mode production, créer le network `directus` et le volume `cafet_postgresql`, puis lancer la
 commande `docker-compose up -d`.
