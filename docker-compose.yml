@@ -6,7 +6,6 @@ services:
         image: postgres:14.2-alpine
         volumes:
             - postgresql:/var/lib/postgresql/data
-            - ./postgresql/dump:/dump
         networks:
             - directus
         environment:
