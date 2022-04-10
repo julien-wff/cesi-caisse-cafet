@@ -1,0 +1,10 @@
+# Storage files
+directus/uploads
+postgresql
+
+# Configs
+.env
+
+# Editors
+.vscode
+.idea
