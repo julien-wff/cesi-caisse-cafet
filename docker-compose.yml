@@ -51,6 +51,17 @@ services:
 
             PUBLIC_URL: "${PUBLIC_URL}"
 
+    web:
+        container_name: caisse-web
+        image: cefadrom/cesi-caisse-cafet:latest
+        build:
+            context: ./web
+        networks:
+            - directus
+        depends_on:
+            - directus
+
+
 networks:
     directus:
         name: "directus"

@@ -5,10 +5,15 @@ services:
         volumes:
             - ./postgresql/database:/var/lib/postgresql/data
         ports:
-            -   "5432:5432"
+            - "5432:5432"
+
     directus:
         ports:
             - "8055:8055"
+
+    web:
+        deploy:
+            replicas: 0
 
 networks:
     directus:
