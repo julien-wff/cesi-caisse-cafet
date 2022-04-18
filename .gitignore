@@ -4,6 +4,7 @@ postgresql
 
 # Configs
 .env
+graphql
 
 # Editors
 .vscode
