@@ -6,6 +6,11 @@
     @apply flex items-center justify-center w-full h-screen overscroll-none;
 }
 
+.loader-big {
+    @apply h-12 w-12 rounded-full animate-[spin_.75s_linear_infinite];
+    @apply border-solid border-8 border-primary border-t-base-300
+}
+
 h1 {
     @apply sm:text-4xl text-xl font-bold;
 }
