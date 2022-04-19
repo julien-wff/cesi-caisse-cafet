@@ -9,7 +9,11 @@ collections:
       display_template: '{{name}}'
       hidden: false
       singleton: false
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Pack de produits
+            singular: pack de produits
+            plural: packs de produits
       archive_field: null
       archive_app_filter: true
       archive_value: null
@@ -81,7 +85,11 @@ collections:
       display_template: '{{name}}'
       hidden: false
       singleton: false
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Produit
+            singular: produit
+            plural: produits
       archive_field: status
       archive_app_filter: true
       archive_value: unavailable
@@ -105,7 +113,11 @@ collections:
       display_template: '{{name}}'
       hidden: false
       singleton: false
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Type de produit
+            singular: type de produit
+            plural: types de produit
       archive_field: null
       archive_app_filter: true
       archive_value: null
@@ -418,7 +430,9 @@ fields:
       hidden: false
       sort: 6
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Nom du pack
       note: null
       conditions: null
       required: true
@@ -509,7 +523,9 @@ fields:
       hidden: false
       sort: 8
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Prix de vente de base
       note: null
       conditions: null
       required: true
@@ -552,7 +568,9 @@ fields:
         hidden: false
         sort: null
         width: half
-        translations: null
+        translations:
+          -   language: fr-FR
+              translation: Nombre minimum de produits
         note: null
         conditions: null
         required: false
@@ -595,7 +613,9 @@ fields:
         hidden: false
         sort: null
         width: half
-        translations: null
+        translations:
+          -   language: fr-FR
+              translation: Nombre maximum de produits
         note: null
         conditions: null
         required: false
@@ -612,16 +632,16 @@ fields:
         data_type: integer
         is_nullable: false
         generation_expression: null
-      default_value: nextval('pack_product_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
+        default_value: nextval('pack_product_id_seq'::regclass)
+        is_generated: false
+        max_length: null
+        comment: null
+        numeric_precision: 32
+        numeric_scale: 0
+        is_unique: true
+        is_primary_key: true
+        has_auto_increment: true
+        foreign_key_schema: null
       foreign_key_table: null
       foreign_key_column: null
     meta:
@@ -1158,7 +1178,9 @@ fields:
       hidden: false
       sort: null
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Nom du produit
       note: null
       conditions: null
       required: true
@@ -1202,7 +1224,9 @@ fields:
       hidden: false
       sort: null
       width: half
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Prix d'achat
       note: null
       conditions: null
       required: true
@@ -1246,7 +1270,9 @@ fields:
       hidden: false
       sort: null
       width: half
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Prix de vente
       note: null
       conditions: null
       required: true
@@ -1289,7 +1315,9 @@ fields:
       hidden: false
       sort: null
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Type de produit
       note: null
       conditions: null
       required: true
@@ -1332,7 +1360,9 @@ fields:
       hidden: false
       sort: null
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Image du produit
       note: null
       conditions: null
       required: false
@@ -1560,7 +1590,7 @@ fields:
       table: product_type
       schema: public
       data_type: character varying
-      is_nullable: true
+      is_nullable: false
       generation_expression: null
       default_value: null
       is_generated: false
@@ -1587,10 +1617,12 @@ fields:
       hidden: false
       sort: null
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Nom du type
       note: null
       conditions: null
-      required: false
+      required: true
       group: null
       validation: null
       validation_message: null
@@ -2020,8 +2052,35 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: pack
-    field: required_product_type
+  -   collection: product_type
+      field: product
+      type: alias
+      schema: null
+      meta:
+        collection: product_type
+        field: product
+        special:
+          - o2m
+        interface: list-o2m
+        options:
+          template: '{{name}}'
+        display: null
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: null
+        width: full
+        translations:
+          -   language: fr-FR
+              translation: Produits liés
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
+        validation_message: null
+  -   collection: pack
+      field: required_product_type
     type: alias
     schema: null
     meta:
@@ -2037,63 +2096,42 @@ fields:
       hidden: false
       sort: 7
       width: full
-      translations: null
+      translations:
+        -   language: fr-FR
+            translation: Types de produits requis
       note: null
       conditions: null
       required: true
       group: null
       validation: null
       validation_message: null
-  - collection: pack
-    field: excluded_product
-    type: alias
-    schema: null
-    meta:
-      collection: pack
+  -   collection: pack
       field: excluded_product
-      special:
-        - m2m
-      interface: list-m2m
-      options:
-        enableCreate: false
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product_type
-    field: product
-    type: alias
-    schema: null
-    meta:
-      collection: product_type
-      field: product
-      special:
-        - o2m
-      interface: list-o2m
-      options:
-        template: '{{name}}'
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
+      type: alias
+      schema: null
+      meta:
+        collection: pack
+        field: excluded_product
+        special:
+          - m2m
+        interface: list-m2m
+        options:
+          enableCreate: false
+        display: null
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: null
+        width: full
+        translations:
+          -   language: fr-FR
+              translation: Produits exclus du pack
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
+        validation_message: null
 relations:
   - collection: pack
     field: product_price_ref
