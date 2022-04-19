@@ -516,16 +516,102 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: pack_product
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: pack_product
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
+  -   collection: pack
+      field: minimum_product_count
+      type: integer
+      schema:
+        name: minimum_product_count
+        table: pack
+        schema: public
+        data_type: integer
+        is_nullable: true
+        generation_expression: null
+        default_value: null
+        is_generated: false
+        max_length: null
+        comment: null
+        numeric_precision: 32
+        numeric_scale: 0
+        is_unique: false
+        is_primary_key: false
+        has_auto_increment: false
+        foreign_key_schema: null
+        foreign_key_table: null
+        foreign_key_column: null
+      meta:
+        collection: pack
+        field: minimum_product_count
+        special: null
+        interface: input
+        options:
+          min: 0
+          max: 100
+        display: null
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: null
+        width: half
+        translations: null
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
+        validation_message: null
+  -   collection: pack
+      field: maximum_product_count
+      type: integer
+      schema:
+        name: maximum_product_count
+        table: pack
+        schema: public
+        data_type: integer
+        is_nullable: true
+        generation_expression: null
+        default_value: null
+        is_generated: false
+        max_length: null
+        comment: null
+        numeric_precision: 32
+        numeric_scale: 0
+        is_unique: false
+        is_primary_key: false
+        has_auto_increment: false
+        foreign_key_schema: null
+        foreign_key_table: null
+        foreign_key_column: null
+      meta:
+        collection: pack
+        field: maximum_product_count
+        special: null
+        interface: input
+        options:
+          min: 1
+          max: 100
+        display: null
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: null
+        width: half
+        translations: null
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
+        validation_message: null
+  -   collection: pack_product
+      field: id
+      type: integer
+      schema:
+        name: id
+        table: pack_product
+        schema: public
+        data_type: integer
+        is_nullable: false
+        generation_expression: null
       default_value: nextval('pack_product_id_seq'::regclass)
       is_generated: false
       max_length: null
