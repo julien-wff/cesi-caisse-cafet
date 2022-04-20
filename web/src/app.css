@@ -12,5 +12,9 @@
 }
 
 h1 {
-    @apply sm:text-4xl text-xl font-bold;
+    @apply sm:text-4xl text-2xl font-bold;
+}
+
+h2 {
+    @apply sm:text-3xl text-xl font-bold;
 }
