@@ -5,7 +5,7 @@
             <form @submit.prevent="handleFormSubmit">
                 <label class="label label-text" for="email-input">Email</label>
                 <input id="email-input"
-                       v-model="credentials.email"
+                       v-model="email"
                        :disabled="loading"
                        class="input input-primary w-full mb-4"
                        required
@@ -13,7 +13,7 @@
 
                 <label class="label label-text" for="password-input">Mot de passe</label>
                 <input id="password-input"
-                       v-model="credentials.password"
+                       v-model="password"
                        :disabled="loading"
                        class="input input-primary w-full"
                        required
@@ -28,23 +28,43 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue';
+import { onMounted } from 'vue';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '../stores/user';
+
+const userStore = useUserStore();
+const router = useRouter();
+
+// Redirect to the home page if the user is already logged in
+onMounted(() => {
+    if (userStore.isLoggedIn) {
+        router.push('/');
+    }
+});
 
 const loading = ref(false);
 const error = ref<string | null>(null);
 
-const credentials = reactive({
-    email: '',
-    password: '',
-});
+const email = ref('');
+const password = ref('');
 
-function handleFormSubmit() {
+async function handleFormSubmit() {
     loading.value = true;
     error.value = null;
+
+    try {
+        await userStore.login(email.value, password.value);
+        await router.push('/');
+    } catch (e) {
+        handleLoginError((e as Error)?.message || 'Une erreur est survenue');
+    } finally {
+        loading.value = false;
+    }
 }
 
 function handleLoginError(err: string) {
     error.value = err;
-    credentials.password = '';
+    password.value = '';
 }
 </script>
