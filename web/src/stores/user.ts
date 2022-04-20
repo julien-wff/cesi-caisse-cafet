@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { handleGQLError, updateAuth } from '../api/client';
 import { getInfo } from '../api/user/getInfo';
 import { login } from '../api/user/login';
+import { refreshTokens } from '../api/user/refreshTokens';
 import { Nullable } from '../types/utils';
 
 export interface UserStore {
@@ -17,7 +18,7 @@ export const useUserStore = defineStore('user', {
     state: () => ({
         accessToken: null,
         refreshToken: null,
-        refreshedAt: Date.now(),
+        refreshedAt: null,
         email: null,
         name: null,
         isLoggedIn: false,
@@ -44,6 +45,22 @@ export const useUserStore = defineStore('user', {
                 const { users_me } = await getInfo();
                 this.email = users_me.email;
                 this.name = users_me.first_name;
+            } catch (e) {
+                throw handleGQLError(e);
+            }
+        },
+        async refreshTokens() {
+            if (!this.refreshToken || !this.isLoggedIn) {
+                throw new Error('User is not logged in');
+            }
+
+            try {
+                const { auth_refresh } = await refreshTokens(this.refreshToken);
+                this.accessToken = auth_refresh.access_token;
+                this.refreshToken = auth_refresh.refresh_token;
+                this.refreshedAt = Date.now();
+                // Update auth state of the GraphQL client with the new token
+                updateAuth(this.accessToken);
             } catch (e) {
                 throw handleGQLError(e);
             }
