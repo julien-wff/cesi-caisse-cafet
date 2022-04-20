@@ -46,7 +46,7 @@ onMounted(() => {
 const loading = ref(false);
 const error = ref<string | null>(null);
 
-const email = ref('');
+const email = ref(userStore.email || '');
 const password = ref('');
 
 async function handleFormSubmit() {
