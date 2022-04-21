@@ -21,7 +21,9 @@
 
                 <p v-if="error" class="mt-4 text-error font-bold">{{ error }}</p>
 
-                <button :disabled="loading" class="btn btn-primary w-full mt-8" type="submit">Se connecter</button>
+                <button :class="{ loading }" class="btn btn-primary w-full mt-8" type="submit">
+                    Se connecter
+                </button>
             </form>
         </div>
     </div>
@@ -50,6 +52,9 @@ const email = ref(userStore.email || '');
 const password = ref('');
 
 async function handleFormSubmit() {
+    if (loading.value)
+        return;
+
     loading.value = true;
     error.value = null;
 
