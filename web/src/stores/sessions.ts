@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { handleGQLError } from '../api/client';
+import { createSession } from '../api/sessions/createSession';
 import { getSessions, Session } from '../api/sessions/getSessions';
 
 export const useSessionsStore = defineStore('sessions', {
@@ -20,6 +21,18 @@ export const useSessionsStore = defineStore('sessions', {
             } catch (e) {
                 throw handleGQLError(e);
             }
+        },
+        async createSession() {
+            try {
+                const { create_sessions_item } = await createSession();
+                this.sessions.unshift(create_sessions_item);
+                this.currentSession = create_sessions_item;
+            } catch (e) {
+                throw handleGQLError(e);
+            }
+        },
+        selectLastSession() {
+            this.currentSession = this.lastSession;
         },
     },
 });
