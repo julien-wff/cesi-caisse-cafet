@@ -32,7 +32,7 @@ export const useUserStore = defineStore('user', {
                 this.refreshToken = auth_login.refresh_token;
                 this.refreshedAt = Date.now();
                 // Update auth state of the GraphQL client with the new token
-                updateAuth(this.accessToken);
+                this.applyTokens();
                 // Get user info
                 await this.getInfo();
                 this.isLoggedIn = true;
@@ -60,10 +60,15 @@ export const useUserStore = defineStore('user', {
                 this.refreshToken = auth_refresh.refresh_token;
                 this.refreshedAt = Date.now();
                 // Update auth state of the GraphQL client with the new token
-                updateAuth(this.accessToken);
+                this.applyTokens();
             } catch (e) {
                 throw handleGQLError(e);
             }
+        },
+        applyTokens() {
+            if (!this.accessToken)
+                throw new Error('No access token');
+            updateAuth(this.accessToken);
         },
     },
 });
