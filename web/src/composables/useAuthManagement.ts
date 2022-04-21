@@ -33,7 +33,9 @@ export function useAuthManagement() {
         // Else, redirect the user to the login page
         if (userStore.isLoggedIn) {
             try {
-                await userStore.refreshTokens();
+                // Only refresh the token if it's more than 30s old
+                if (userStore.refreshedAt! + 30 * 1000 < Date.now())
+                    await userStore.refreshTokens();
                 interval = setInterval(refreshTokens, REFRESH_INTERVAL);
             } catch (e) {
                 console.error(e);
