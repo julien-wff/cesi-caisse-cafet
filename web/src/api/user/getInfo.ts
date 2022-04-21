@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+import { UserInfo } from '../../types/user';
 import { GraphQLSystemClient } from '../client';
 
 export function getInfo() {
@@ -12,9 +13,6 @@ export function getInfo() {
     `);
 }
 
-export interface InfoResponse {
-    users_me: {
-        email: string;
-        first_name: string;
-    };
-}
+export type InfoResponse = {
+    users_me: UserInfo;
+};

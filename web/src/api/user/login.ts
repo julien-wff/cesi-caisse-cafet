@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+import { UserTokens } from '../../types/user';
 import { GraphQLSystemClient } from '../client';
 
 export function login(email: string, password: string) {
@@ -18,9 +19,6 @@ export function login(email: string, password: string) {
     );
 }
 
-export interface LoginResponse {
-    auth_login: {
-        access_token: string;
-        refresh_token: string;
-    };
-}
+export type LoginResponse = {
+    auth_login: UserTokens;
+};

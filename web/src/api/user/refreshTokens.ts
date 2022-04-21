@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+import { UserTokens } from '../../types/user';
 import { GraphQLSystemClient } from '../client';
 
 export function refreshTokens(refreshToken: string) {
@@ -17,9 +18,6 @@ export function refreshTokens(refreshToken: string) {
     );
 }
 
-export interface RefreshResponse {
-    auth_refresh: {
-        access_token: string;
-        refresh_token: string;
-    };
+export type RefreshResponse = {
+    auth_refresh: UserTokens;
 }

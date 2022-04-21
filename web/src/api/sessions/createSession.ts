@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
+import { Session } from '../../types/session';
 import { GraphQLClient } from '../client';
-import { Session } from './getSessions';
 
 export function createSession(): Promise<CreateSessionResponse> {
     return GraphQLClient.request<CreateSessionResponse>(gql`
