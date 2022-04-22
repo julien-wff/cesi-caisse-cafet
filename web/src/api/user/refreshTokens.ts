@@ -1,9 +1,10 @@
-import { gql } from 'graphql-request';
+import { gql, request } from 'graphql-request';
 import { UserTokens } from '../../types/user';
-import { GraphQLSystemClient } from '../client';
+import { ENDPOINT } from '../client';
 
 export function refreshTokens(refreshToken: string) {
-    return GraphQLSystemClient.request<RefreshResponse>(
+    return request<RefreshResponse>(
+        `${ENDPOINT}/graphql/system`,
         gql`
             mutation RefreshTokens($refreshToken: String!) {
                 auth_refresh(refresh_token: $refreshToken, mode: json) {

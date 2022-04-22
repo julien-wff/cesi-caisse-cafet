@@ -1,9 +1,10 @@
-import { gql } from 'graphql-request';
+import { gql, request } from 'graphql-request';
 import { UserTokens } from '../../types/user';
-import { GraphQLSystemClient } from '../client';
+import { ENDPOINT } from '../client';
 
 export function login(email: string, password: string) {
-    return GraphQLSystemClient.request<LoginResponse>(
+    return request<LoginResponse>(
+        `${ENDPOINT}/graphql/system`,
         gql`
             mutation Login($email: String!, $password: String!) {
                 auth_login(email: $email, password: $password) {
