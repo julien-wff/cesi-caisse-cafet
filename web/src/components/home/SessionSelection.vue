@@ -19,10 +19,12 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
 import dayjs from 'dayjs';
+import { useRouter } from 'vue-router';
 import { useSessionsStore } from '../../stores/sessions';
 import SessionChoice from './SessionChoice.vue';
 
 const sessionsStore = useSessionsStore();
+const router = useRouter();
 
 const loadingSession = ref(false);
 
@@ -51,5 +53,7 @@ async function handleChoiceClick(choice: 'new' | 'last') {
             sessionsStore.selectLastSession();
             break;
     }
+
+    await router.push('/session');
 }
 </script>
