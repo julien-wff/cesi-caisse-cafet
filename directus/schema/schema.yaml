@@ -642,16 +642,16 @@ fields:
         is_primary_key: true
         has_auto_increment: true
         foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack_product
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
+        foreign_key_table: null
+        foreign_key_column: null
+      meta:
+        collection: pack_product
+        field: id
+        special: null
+        interface: null
+        options: null
+        display: null
+        display_options: null
       readonly: false
       hidden: true
       sort: null
@@ -1839,16 +1839,59 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: sessions
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: sessions
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
+  -   collection: sell
+      field: session
+      type: integer
+      schema:
+        name: session
+        table: sell
+        schema: public
+        data_type: integer
+        is_nullable: true
+        generation_expression: null
+        default_value: null
+        is_generated: false
+        max_length: null
+        comment: null
+        numeric_precision: 32
+        numeric_scale: 0
+        is_unique: false
+        is_primary_key: false
+        has_auto_increment: false
+        foreign_key_schema: public
+        foreign_key_table: sessions
+        foreign_key_column: id
+      meta:
+        collection: sell
+        field: session
+        special:
+          - m2o
+        interface: select-dropdown-m2o
+        options:
+          template: '#{{id}} ({{date_created}})'
+        display: null
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: null
+        width: full
+        translations: null
+        note: null
+        conditions: null
+        required: true
+        group: null
+        validation: null
+        validation_message: null
+  -   collection: sessions
+      field: id
+      type: integer
+      schema:
+        name: id
+        table: sessions
+        schema: public
+        data_type: integer
+        is_nullable: false
+        generation_expression: null
       default_value: nextval('sessions_id_seq'::regclass)
       is_generated: false
       max_length: null
@@ -1913,7 +1956,7 @@ fields:
       display: user
       display_options: null
       readonly: true
-      hidden: true
+      hidden: false
       sort: null
       width: half
       translations: null
@@ -1956,7 +1999,7 @@ fields:
       display_options:
         relative: true
       readonly: true
-      hidden: true
+      hidden: false
       sort: null
       width: half
       translations: null
@@ -1999,7 +2042,7 @@ fields:
       display: user
       display_options: null
       readonly: true
-      hidden: true
+      hidden: false
       sort: null
       width: half
       translations: null
@@ -2042,7 +2085,7 @@ fields:
       display_options:
         relative: true
       readonly: true
-      hidden: true
+      hidden: false
       sort: null
       width: half
       translations: null
@@ -2081,30 +2124,30 @@ fields:
         validation_message: null
   -   collection: pack
       field: required_product_type
-    type: alias
-    schema: null
-    meta:
-      collection: pack
-      field: required_product_type
-      special:
-        - m2m
-      interface: list-m2m
-      options: null
-      display: null
+      type: alias
+      schema: null
+      meta:
+        collection: pack
+        field: required_product_type
+        special:
+          - m2m
+        interface: list-m2m
+        options: null
+        display: null
       display_options: null
       readonly: false
       hidden: false
       sort: 7
-      width: full
-      translations:
-        -   language: fr-FR
-            translation: Types de produits requis
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
+        width: full
+        translations:
+          -   language: fr-FR
+              translation: Types de produits requis
+        note: null
+        conditions: null
+        required: true
+        group: null
+        validation: null
+        validation_message: null
   -   collection: pack
       field: excluded_product
       type: alias
@@ -2126,6 +2169,33 @@ fields:
         translations:
           -   language: fr-FR
               translation: Produits exclus du pack
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
+        validation_message: null
+  -   collection: sessions
+      field: sells
+      type: alias
+      schema: null
+      meta:
+        collection: sessions
+        field: sells
+        special:
+          - o2m
+        interface: list-o2m
+        options:
+          template: '{{id}}'
+          enableCreate: false
+          enableSelect: false
+        display: null
+        display_options: null
+        readonly: true
+        hidden: false
+        sort: null
+        width: full
+        translations: null
         note: null
         conditions: null
         required: false
@@ -2441,7 +2511,7 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: product
+  -   collection: product
     field: thumbnail
     related_collection: directus_files
     schema:
@@ -2453,26 +2523,48 @@ relations:
       foreign_key_column: id
       on_update: NO ACTION
       on_delete: SET NULL
-    meta:
-      many_collection: product
-      many_field: thumbnail
-      one_collection: directus_files
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: pack_product
-    field: pack_id
-    related_collection: pack
-    schema:
-      constraint_name: pack_product_pack_id_foreign
-      table: pack_product
-      column: pack_id
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
+      meta:
+        many_collection: product
+        many_field: thumbnail
+        one_collection: directus_files
+        one_field: null
+        one_collection_field: null
+        one_allowed_collections: null
+        junction_field: null
+        sort_field: null
+        one_deselect_action: nullify
+  -   collection: sell
+      field: session
+      related_collection: sessions
+      schema:
+        constraint_name: sell_session_foreign
+        table: sell
+        column: session
+        foreign_key_schema: public
+        foreign_key_table: sessions
+        foreign_key_column: id
+        on_update: NO ACTION
+        on_delete: SET NULL
+      meta:
+        many_collection: sell
+        many_field: session
+        one_collection: sessions
+        one_field: sells
+        one_collection_field: null
+        one_allowed_collections: null
+        junction_field: null
+        sort_field: null
+        one_deselect_action: nullify
+  -   collection: pack_product
+      field: pack_id
+      related_collection: pack
+      schema:
+        constraint_name: pack_product_pack_id_foreign
+        table: pack_product
+        column: pack_id
+        foreign_key_schema: public
+        foreign_key_table: pack
+        foreign_key_column: id
       on_update: NO ACTION
       on_delete: SET NULL
     meta:
