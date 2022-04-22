@@ -22,12 +22,11 @@
 import { computed } from 'vue';
 import { ENDPOINT } from '../../api/client';
 import { Product } from '../../types/product';
+import { currencyFormat } from '../../utils/currency';
 
 const props = defineProps<{
     product: Product,
 }>();
-
-const currencyFormat = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' });
 
 const productPrice = computed(() => {
     return currencyFormat.format(props.product.sell_price);
