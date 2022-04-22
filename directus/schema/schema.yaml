@@ -652,16 +652,16 @@ fields:
         options: null
         display: null
         display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
+        readonly: false
+        hidden: true
+        sort: null
+        width: full
+        translations: null
+        note: null
+        conditions: null
+        required: false
+        group: null
+        validation: null
       validation_message: null
   - collection: pack_product
     field: pack_id
@@ -938,28 +938,28 @@ fields:
       interface: select-dropdown
       options:
         choices:
-          - text: Available
-            value: available
-          - text: Out of stock
-            value: out_of_stock
-          - text: Unavailable
-            value: unavailable
+          -   text: Disponible
+              value: available
+          -   text: Rupture de stock
+              value: out_of_stock
+          -   text: Indisponible
+              value: unavailable
       display: labels
       display_options:
         showAsDot: true
         choices:
-          - text: Available
-            value: available
-            foreground: '#FFFFFF'
-            background: '#2ECDA7'
-          - text: Out of stock
-            value: out_of_stock
-            foreground: '#FFFFFF'
-            background: '#E35169'
-          - text: Unavailable
-            value: unavailable
-            foreground: '#FFFFFF'
-            background: '#A2B5CD'
+          -   text: Disponible
+              value: available
+              foreground: '#FFFFFF'
+              background: '#2ECDA7'
+          -   text: Rupture de stock
+              value: out_of_stock
+              foreground: '#FFFFFF'
+              background: '#E35169'
+          -   text: Indisponible
+              value: unavailable
+              foreground: '#FFFFFF'
+              background: '#A2B5CD'
       readonly: false
       hidden: false
       sort: null
@@ -1892,16 +1892,16 @@ fields:
         data_type: integer
         is_nullable: false
         generation_expression: null
-      default_value: nextval('sessions_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
+        default_value: nextval('sessions_id_seq'::regclass)
+        is_generated: false
+        max_length: null
+        comment: null
+        numeric_precision: 32
+        numeric_scale: 0
+        is_unique: true
+        is_primary_key: true
+        has_auto_increment: true
+        foreign_key_schema: null
       foreign_key_table: null
       foreign_key_column: null
     meta:
@@ -2134,10 +2134,10 @@ fields:
         interface: list-m2m
         options: null
         display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
+        display_options: null
+        readonly: false
+        hidden: false
+        sort: 7
         width: full
         translations:
           -   language: fr-FR
@@ -2512,17 +2512,17 @@ relations:
       sort_field: null
       one_deselect_action: nullify
   -   collection: product
-    field: thumbnail
-    related_collection: directus_files
-    schema:
-      constraint_name: product_thumbnail_foreign
-      table: product
-      column: thumbnail
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
+      field: thumbnail
+      related_collection: directus_files
+      schema:
+        constraint_name: product_thumbnail_foreign
+        table: product
+        column: thumbnail
+        foreign_key_schema: public
+        foreign_key_table: directus_files
+        foreign_key_column: id
+        on_update: NO ACTION
+        on_delete: SET NULL
       meta:
         many_collection: product
         many_field: thumbnail
@@ -2565,16 +2565,16 @@ relations:
         foreign_key_schema: public
         foreign_key_table: pack
         foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: pack_product
-      many_field: pack_id
-      one_collection: pack
-      one_field: excluded_product
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: product_id
+        on_update: NO ACTION
+        on_delete: SET NULL
+      meta:
+        many_collection: pack_product
+        many_field: pack_id
+        one_collection: pack
+        one_field: excluded_product
+        one_collection_field: null
+        one_allowed_collections: null
+        junction_field: product_id
       sort_field: null
       one_deselect_action: nullify
   - collection: pack_product_type
