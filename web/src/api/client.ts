@@ -1,9 +1,9 @@
 import { ClientError, GraphQLClient as Client } from 'graphql-request';
 
-const endpoint = import.meta.env.VITE_API_ENDPOINT;
+export const ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
-export const GraphQLClient = new Client(`${endpoint}/graphql`);
-export const GraphQLSystemClient = new Client(`${endpoint}/graphql/system`);
+export const GraphQLClient = new Client(`${ENDPOINT}/graphql`);
+export const GraphQLSystemClient = new Client(`${ENDPOINT}/graphql/system`);
 
 export function updateAuth(token: string) {
     GraphQLClient.setHeader('Authorization', `Bearer ${token}`);
