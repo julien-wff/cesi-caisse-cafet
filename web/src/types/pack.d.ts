@@ -3,7 +3,7 @@ export interface Pack {
     name: string;
     requiredProductTypes: PackRequiredProductType[];
     baseSellPrice: number;
-    productPriceRef: PackProductPriceRef | null;
+    productCategoryPriceRef: PackProductCategoryPriceRef | null;
     excludedProducts: ExcludedProduct[];
     minimumProductCount: number | null;
     maximumProductCount: number | null;
@@ -14,10 +14,9 @@ export interface PackRequiredProductType {
     name: string;
 }
 
-export interface PackProductPriceRef {
+export interface PackProductCategoryPriceRef {
     id: string;
     name: string;
-    sellPrice: number;
 }
 
 export interface ExcludedProduct {

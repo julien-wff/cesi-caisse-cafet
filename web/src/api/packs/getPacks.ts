@@ -52,11 +52,6 @@ export interface RawPackResponse {
         product_price_ref: null | {
             id: string;
             name: string;
-            product: {
-                id: string;
-                name: string;
-                sell_price: number;
-            }
         };
         excluded_product: {
             product_id: {
@@ -83,11 +78,10 @@ export function parseRawPackResponse(rawResponse: RawPackResponse): Pack[] {
         } = pack;
 
         const requiredProductTypes = required_product_type.map(({ product_type_id }) => product_type_id);
-        const productPriceRef = product_price_ref ?
+        const productCategoryPriceRef = product_price_ref ?
             {
-                id: product_price_ref.product.id,
-                name: product_price_ref.product.name,
-                sellPrice: product_price_ref.product.sell_price,
+                id: product_price_ref.id,
+                name: product_price_ref.name,
             }
             : null;
         const excludedProducts = excluded_product.map(({ product_id }) => product_id);
@@ -97,7 +91,7 @@ export function parseRawPackResponse(rawResponse: RawPackResponse): Pack[] {
             name,
             requiredProductTypes,
             baseSellPrice: base_sell_price,
-            productPriceRef,
+            productCategoryPriceRef,
             excludedProducts,
             minimumProductCount: minimum_product_count,
             maximumProductCount: maximum_product_count,
