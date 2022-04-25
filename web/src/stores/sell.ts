@@ -50,7 +50,7 @@ export const useSellStore = defineStore('sell', {
             this.cart.push({ product, quantity });
         },
         removeFromCart(product: Product) {
-            this.cart = this.cart.filter(({ product: p }) => p !== product);
+            this.cart = this.cart.filter(({ product: p }) => p.id !== product.id);
         },
         addQuantity(product: Product, quantity: number) {
             const index = this.cart.findIndex(({ product: p }) => p.id === product.id);
