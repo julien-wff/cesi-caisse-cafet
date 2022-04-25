@@ -16,15 +16,18 @@ import { useRouter } from 'vue-router';
 import CheckoutBar from '../components/session/CheckoutBar.vue';
 import ProductTypes from '../components/session/ProductTypes.vue';
 import { useProductStore } from '../stores/product';
+import { useSellStore } from '../stores/sell';
 import { useSessionsStore } from '../stores/sessions';
 
 const sessionsStore = useSessionsStore();
 const productStore = useProductStore();
+const sellStore = useSellStore();
 const router = useRouter();
 
 onMounted(() => {
     if (!sessionsStore.currentSession)
         router.push('/');
     productStore.fetchProducts();
+    sellStore.fetchPacks();
 });
 </script>
