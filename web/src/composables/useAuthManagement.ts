@@ -38,7 +38,7 @@ export function useAuthManagement() {
                     await userStore.refreshTokens();
                 else
                     userStore.applyTokens();
-                interval = setInterval(refreshTokens, REFRESH_INTERVAL);
+                interval = window.setInterval(refreshTokens, REFRESH_INTERVAL);
             } catch (e) {
                 console.error(e);
                 disconnectUser();
@@ -53,7 +53,7 @@ export function useAuthManagement() {
         // Updates the interval to refresh the tokens according to the user's login status
         userStore.$subscribe((mutation, state) => {
             if (state.isLoggedIn && interval === null) {
-                interval = setInterval(refreshTokens, REFRESH_INTERVAL);
+                interval = window.setInterval(refreshTokens, REFRESH_INTERVAL);
             } else if (!state.isLoggedIn && interval !== null) {
                 clearInterval(interval);
                 interval = null;
