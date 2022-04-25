@@ -12,11 +12,16 @@
                            class="border-primary"
                            title="Continuer la session précédente"
                            @click="handleChoiceClick('last')"/>
+            <a :href="ENDPOINT + '/admin/'"
+               class="p-4 mt-4 border-accent border-2 rounded-xl hover:scale-105 transition cursor-pointer select-none text-xl">
+                Accéder à Directus
+            </a>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import { ENDPOINT } from '@/api/client';
 import { computed, ref } from 'vue';
 import dayjs from 'dayjs';
 import { useRouter } from 'vue-router';
