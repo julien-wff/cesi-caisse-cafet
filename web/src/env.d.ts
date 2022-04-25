@@ -14,3 +14,20 @@ interface ImportMetaEnv {
 interface ImportMeta {
     readonly env: ImportMetaEnv;
 }
+
+// UpUp types definitions
+// https://github.com/TalAter/UpUp/tree/master/docs
+declare const UpUp: {
+    start: (settings?: Partial<UpUpSettings>) => void;
+    addSettings: (settings?: Partial<UpUpSettings>) => void;
+    debug: (newState?: boolean) => void;
+};
+
+interface UpUpSettings {
+    'content-url': string;
+    content: string;
+    assets: string[];
+    'cache-version': string;
+    'service-worker-url': string;
+    scope: string;
+}

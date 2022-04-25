@@ -16,3 +16,17 @@ createApp(App)
     .use(router)
     .use(pinia)
     .mount('#app');
+
+// Service worker for offline capabilities
+if (import.meta.env.PROD) {
+    fetch('/build.json')
+        .then(res => res.json())
+        .then((ressources: string[]) => {
+            UpUp.start({
+                'content-url': 'index.html',
+                'assets': ressources,
+                'service-worker-url': 'upup.sw.min.js',
+            });
+        })
+        .catch(e => console.error('Failed to install service worker' + e));
+}
