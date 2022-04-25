@@ -6,9 +6,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useSessionsStore } from '../stores/sessions';
-import { useUserStore } from '../stores/user';
-import SessionSelection from '../components/home/SessionSelection.vue';
+import { useSessionsStore } from '@/stores/sessions';
+import { useUserStore } from '@/stores/user';
+import SessionSelection from '@/components/home/SessionSelection.vue';
 import Loading from './Loading.vue';
 
 const userStore = useUserStore();

@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import { handleGQLError } from '../api/client';
-import { getPacks } from '../api/packs/getPacks';
-import { useProductPacking } from '../composables/useProductPacking';
-import { Pack } from '../types/pack';
-import { Product } from '../types/product';
+import { handleGQLError } from '@/api/client';
+import { getPacks } from '@/api/packs/getPacks';
+import { useProductPacking } from '@/composables/useProductPacking';
+import { Pack } from '@/types/pack';
+import { Product } from '@/types/product';
 
 export interface SellProduct {
     product: Product;

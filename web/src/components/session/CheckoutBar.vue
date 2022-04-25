@@ -10,8 +10,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useSellStore } from '../../stores/sell';
-import { currencyFormat } from '../../utils/currency';
+import { useSellStore } from '@/stores/sell';
+import { currencyFormat } from '@/utils/currency';
 import DoubleArrow from '../icons/DoubleArrow.vue';
 
 const sellStore = useSellStore();

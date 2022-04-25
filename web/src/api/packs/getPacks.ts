@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { Pack } from '../../types/pack';
+import { Pack } from '@/types/pack';
 import { GraphQLClient } from '../client';
 
 export function getPacks() {

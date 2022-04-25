@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
-import { handleGQLError } from '../api/client';
-import { getProductsByTypes } from '../api/products/getProductsByTypes';
-import { Product, ProductType } from '../types/product';
+import { handleGQLError } from '@/api/client';
+import { getProductsByTypes } from '@/api/products/getProductsByTypes';
+import { Product, ProductType } from '@/types/product';
 
 export const useProductStore = defineStore('product', {
     state: () => ({

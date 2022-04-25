@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { ProductType } from '../../types/product';
+import { ProductType } from '@/types/product';
 import { GraphQLClient } from '../client';
 
 export function getProductsByTypes() {

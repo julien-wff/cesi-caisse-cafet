@@ -13,11 +13,11 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import CheckoutBar from '../components/session/CheckoutBar.vue';
-import ProductTypes from '../components/session/ProductTypes.vue';
-import { useProductStore } from '../stores/product';
-import { useSellStore } from '../stores/sell';
-import { useSessionsStore } from '../stores/sessions';
+import CheckoutBar from '@/components/session/CheckoutBar.vue';
+import ProductTypes from '@/components/session/ProductTypes.vue';
+import { useProductStore } from '@/stores/product';
+import { useSellStore } from '@/stores/sell';
+import { useSessionsStore } from '@/stores/sessions';
 
 const sessionsStore = useSessionsStore();
 const productStore = useProductStore();

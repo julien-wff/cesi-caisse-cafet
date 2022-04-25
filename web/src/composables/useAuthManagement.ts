@@ -1,6 +1,6 @@
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { UserStore, useUserStore } from '../stores/user';
+import { UserStore, useUserStore } from '@/stores/user';
 
 export function useAuthManagement() {
     const userStore = useUserStore();

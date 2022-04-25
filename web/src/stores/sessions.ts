@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia';
-import { handleGQLError } from '../api/client';
-import { createSession } from '../api/sessions/createSession';
-import { getSessions } from '../api/sessions/getSessions';
-import { Session } from '../types/session';
+import { handleGQLError } from '@/api/client';
+import { createSession } from '@/api/sessions/createSession';
+import { getSessions } from '@/api/sessions/getSessions';
+import { Session } from '@/types/session';
 
 export const useSessionsStore = defineStore('sessions', {
     state: () => ({

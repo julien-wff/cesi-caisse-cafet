@@ -4,8 +4,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useAuthManagement } from './composables/useAuthManagement';
-import Loading from './views/Loading.vue';
+import { useAuthManagement } from '@/composables/useAuthManagement';
+import Loading from '@/views/Loading.vue';
 
 const { isAccountLoaded } = useAuthManagement();
 </script>

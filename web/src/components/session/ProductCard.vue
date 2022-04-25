@@ -21,10 +21,10 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { ENDPOINT } from '../../api/client';
-import { useSellStore } from '../../stores/sell';
-import { Product } from '../../types/product';
-import { currencyFormat } from '../../utils/currency';
+import { ENDPOINT } from '@/api/client';
+import { useSellStore } from '@/stores/sell';
+import { Product } from '@/types/product';
+import { currencyFormat } from '@/utils/currency';
 import ProductCardIndicator from './ProductCardIndicator.vue';
 
 const sellStore = useSellStore();

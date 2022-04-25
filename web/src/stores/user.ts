@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import { handleGQLError, updateAuth } from '../api/client';
-import { getInfo } from '../api/user/getInfo';
-import { login } from '../api/user/login';
-import { refreshTokens } from '../api/user/refreshTokens';
-import { Nullable } from '../types/utils';
+import { handleGQLError, updateAuth } from '@/api/client';
+import { getInfo } from '@/api/user/getInfo';
+import { login } from '@/api/user/login';
+import { refreshTokens } from '@/api/user/refreshTokens';
+import { Nullable } from '@/types/utils';
 
 export interface UserStore {
     accessToken: string;

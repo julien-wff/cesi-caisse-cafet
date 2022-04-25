@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { UserInfo } from '../../types/user';
+import { UserInfo } from '@/types/user';
 import { GraphQLSystemClient } from '../client';
 
 export function getInfo() {

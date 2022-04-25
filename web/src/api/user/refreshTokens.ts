@@ -1,5 +1,5 @@
 import { gql, request } from 'graphql-request';
-import { UserTokens } from '../../types/user';
+import { UserTokens } from '@/types/user';
 import { ENDPOINT } from '../client';
 
 export function refreshTokens(refreshToken: string) {

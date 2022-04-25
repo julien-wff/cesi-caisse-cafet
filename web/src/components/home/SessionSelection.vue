@@ -20,7 +20,7 @@
 import { computed, ref } from 'vue';
 import dayjs from 'dayjs';
 import { useRouter } from 'vue-router';
-import { useSessionsStore } from '../../stores/sessions';
+import { useSessionsStore } from '@/stores/sessions';
 import SessionChoice from './SessionChoice.vue';
 
 const sessionsStore = useSessionsStore();

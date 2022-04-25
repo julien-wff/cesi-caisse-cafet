@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { Session, SessionSort } from '../../types/session';
+import { Session, SessionSort } from '@/types/session';
 import { GraphQLClient } from '../client';
 
 export function getSessions({

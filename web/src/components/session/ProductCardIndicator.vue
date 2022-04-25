@@ -11,8 +11,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { useSellStore } from '../../stores/sell';
-import { Product } from '../../types/product';
+import { useSellStore } from '@/stores/sell';
+import { Product } from '@/types/product';
 
 const sellStore = useSellStore();
 

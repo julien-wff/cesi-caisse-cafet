@@ -1,6 +1,6 @@
-import { SellProduct } from '../stores/sell';
-import { Pack } from '../types/pack';
-import { Product } from '../types/product';
+import { SellProduct } from '@/stores/sell';
+import { Pack } from '@/types/pack';
+import { Product } from '@/types/product';
 
 export function useProductPacking(sells: SellProduct[], packs: Pack[]) {
     // Clone the sells object to clear reference and avoid mutation on the original object

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import NotFound from '../views/NotFound.vue';
-import Login from '../views/Login.vue';
-import Session from '../views/Session.vue';
+import Home from '@/views/Home.vue';
+import NotFound from '@/views/NotFound.vue';
+import Login from '@/views/Login.vue';
+import Session from '@/views/Session.vue';
 
 const routes = [
     {
