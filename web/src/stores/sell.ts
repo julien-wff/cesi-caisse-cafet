@@ -1,3 +1,4 @@
+import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
 import { handleGQLError } from '@/api/client';
 import { getPacks } from '@/api/packs/getPacks';
@@ -23,7 +24,15 @@ export const useSellStore = defineStore('sell', {
                 (total, { product, quantity }) => total + product.sell_price * quantity,
                 0,
             );
-            return packedSellsPrice + remainingProductsPrice;
+            return roundMoney(packedSellsPrice + remainingProductsPrice);
+        },
+        buyPrice(store) {
+            return roundMoney(
+                store.cart.reduce((total, { product, quantity }) => total + product.buy_price * quantity, 0),
+            );
+        },
+        revenue(): number {
+            return roundMoney(this.totalPrice - this.buyPrice);
         },
         itemsCount(store) {
             return store.cart.reduce((total, { quantity }) => total + quantity, 0);
