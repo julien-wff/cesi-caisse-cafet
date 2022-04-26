@@ -1,3 +1,5 @@
+import { createSell } from '@/api/sessions/createSell';
+import { useSessionsStore } from '@/stores/sessions';
 import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
 import { handleGQLError } from '@/api/client';
@@ -71,9 +73,36 @@ export const useSellStore = defineStore('sell', {
             else
                 this.cart[index].quantity = newQuantity;
         },
-        confirmSell() {
-            console.table([ ...this.cart.map(({ quantity, product }) => ({ quantity, product: product.name })) ]);
-            this.$reset();
+        async confirmSell() {
+            const sessionStore = useSessionsStore();
+
+            // Aggregate packs
+            const packs = this.packing.packedSells.reduce((acc, { pack }) => {
+                const packIndex = acc.findIndex(p => p.packID === pack.id);
+                if (packIndex === -1)
+                    acc.push({ packID: pack.id, quantity: 1 });
+                else
+                    acc[packIndex].quantity++;
+                return acc;
+            }, [] as { packID: string, quantity: number }[]);
+
+            try {
+                await createSell({
+                    sessionID: sessionStore.currentSession!.id,
+                    revenue: this.revenue,
+                    buyPrice: this.buyPrice,
+                    sellPrice: this.totalPrice,
+                    products: this.cart.map(({ product, quantity }) => ({
+                        productID: product.id,
+                        quantity,
+                    })),
+                    packs,
+                });
+                // Reset the cart
+                this.cart = [];
+            } catch (e) {
+                throw handleGQLError(e);
+            }
         },
     },
 });
