@@ -1,1 +1,1 @@
-docker exec -it directus npx directus schema apply ./schema/schema.yaml "$@"
+docker exec -it cafet_directus npx directus schema apply ./schema/schema.yaml "$@"
