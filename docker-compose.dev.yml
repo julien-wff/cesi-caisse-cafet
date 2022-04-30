@@ -10,6 +10,8 @@ services:
     directus:
         ports:
             - "8055:8055"
+        volumes:
+            - ./directus/uploads:/directus/uploads
         environment:
             CORS_ORIGIN: "*"
 

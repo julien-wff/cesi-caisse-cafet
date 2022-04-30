@@ -24,7 +24,7 @@ services:
         image: directus/directus:latest
         hostname: cafet-directus
         volumes:
-            - ./directus/uploads:/directus/uploads
+            - directus_uploads:/directus/uploads
             - ./directus/schema:/directus/schema
             - ./directus/extensions:/directus/extensions
         networks:
@@ -81,4 +81,7 @@ networks:
 volumes:
     postgresql:
         name: "cafet_postgresql"
+        external: true
+    directus_uploads:
+        name: "cafet_directus_uploads"
         external: true
