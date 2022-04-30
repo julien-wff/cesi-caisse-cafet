@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import router from './router';
 import App from './App.vue';
+import 'upup';
 import './app.css';
 
 // Dayjs locale
@@ -28,5 +29,5 @@ if (import.meta.env.PROD) {
                 'service-worker-url': 'upup.sw.min.js',
             });
         })
-        .catch(e => console.error('Failed to install service worker' + e));
+        .catch(e => console.error('Failed to install service worker', e));
 }

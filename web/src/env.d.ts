@@ -23,7 +23,7 @@ declare const UpUp: {
     debug: (newState?: boolean) => void;
 };
 
-interface UpUpSettings {
+declare interface UpUpSettings {
     'content-url': string;
     content: string;
     assets: string[];
