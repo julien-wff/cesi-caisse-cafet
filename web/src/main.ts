@@ -19,7 +19,7 @@ createApp(App)
     .mount('#app');
 
 // Service worker for offline capabilities
-if (import.meta.env.PROD) {
+if (import.meta.env.PROD && navigator.onLine) {
     fetch('/build.json')
         .then(res => res.json())
         .then((ressources: string[]) => {
