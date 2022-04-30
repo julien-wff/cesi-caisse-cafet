@@ -22,6 +22,7 @@ services:
     directus:
         container_name: cafet_directus
         image: directus/directus:latest
+        hostname: cafet-directus
         volumes:
             - ./directus/uploads:/directus/uploads
             - ./directus/schema:/directus/schema
@@ -52,9 +53,13 @@ services:
 
             PUBLIC_URL: "${PUBLIC_URL}"
 
+            CORS_ENABLED: "true"
+            CORS_ORIGIN: "${WEB_CORS_ORIGIN}"
+
     web:
         container_name: cafet_web
         image: cefadrom/cesi-caisse-cafet:latest
+        hostname: cafet-web
         build:
             context: ./web
             args:
