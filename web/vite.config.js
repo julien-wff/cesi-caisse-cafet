@@ -17,7 +17,10 @@ export default defineConfig({
             writeBundle: function (options, bundle) {
                 fs.writeFileSync(
                     path.resolve(options.dir, 'build.json'),
-                    JSON.stringify(Object.keys(bundle), null, 2)
+                    JSON.stringify([
+                        ...Object.keys(bundle),
+                        ...fs.readdirSync(path.resolve('public')),
+                    ], null, 2)
                 );
             },
         }
