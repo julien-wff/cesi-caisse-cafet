@@ -2,32 +2,33 @@ version: '3.8'
 
 services:
     postgresql:
-        container_name: postgresql
+        container_name: cafet_postgresql
         image: postgres:14.2-alpine
         volumes:
             - postgresql:/var/lib/postgresql/data
         networks:
-            - directus
+            - cafet_internal
         environment:
             POSTGRES_USER: "${POSTGRES_USER}"
             POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
             POSTGRES_DB: 'directus'
 
     redis:
-        container_name: redis
+        container_name: cafet_redis
         image: redis:alpine
         networks:
-            - directus
+            - cafet_internal
 
     directus:
-        container_name: directus
+        container_name: cafet_directus
         image: directus/directus:latest
         volumes:
             - ./directus/uploads:/directus/uploads
             - ./directus/schema:/directus/schema
             - ./directus/extensions:/directus/extensions
         networks:
-            - directus
+            - cafet_web
+            - cafet_internal
         depends_on:
             - redis
             - postgresql
@@ -52,22 +53,25 @@ services:
             PUBLIC_URL: "${PUBLIC_URL}"
 
     web:
-        container_name: caisse-web
+        container_name: cafet_web
         image: cefadrom/cesi-caisse-cafet:latest
         build:
             context: ./web
             args:
                 VITE_API_ENDPOINT: "${VITE_API_ENDPOINT}"
         networks:
-            - directus
+            - cafet_web
         depends_on:
             - directus
 
 
 networks:
-    directus:
-        name: "directus"
+    cafet_web:
+        name: "cafet_web"
         external: true
+    cafet_internal:
+        name: "cafet_internal"
+        external: false
 
 volumes:
     postgresql:

@@ -19,7 +19,7 @@ services:
             replicas: 0
 
 networks:
-    directus:
+    cafet_web:
         external: false
 
 volumes:
