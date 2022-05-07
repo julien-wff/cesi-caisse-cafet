@@ -8,7 +8,7 @@ export function getProductsByTypes() {
             product_type (filter: {product: {status: {_eq: "available"}}}) {
                 id
                 name
-                product {
+                product(filter: { status: {_eq: "available"} }) {
                     id
                     status
                     name
