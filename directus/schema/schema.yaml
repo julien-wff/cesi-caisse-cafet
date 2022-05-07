@@ -1,5 +1,5 @@
 version: 1
-directus: 9.9.1
+directus: 9.10.0
 collections:
   - collection: pack
     meta:
@@ -2767,33 +2767,6 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: product_type
-    field: product
-    type: alias
-    schema: null
-    meta:
-      collection: product_type
-      field: product
-      special:
-        - o2m
-      interface: list-o2m
-      options:
-        template: '{{name}}'
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Produits liés
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
   - collection: pack
     field: required_product_type
     type: alias
@@ -2841,6 +2814,33 @@ fields:
       translations:
         - language: fr-FR
           translation: Produits exclus du pack
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: product_type
+    field: product
+    type: alias
+    schema: null
+    meta:
+      collection: product_type
+      field: product
+      special:
+        - o2m
+      interface: list-o2m
+      options:
+        template: '{{name}}'
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: null
+      width: full
+      translations:
+        - language: fr-FR
+          translation: Produits liés
       note: null
       conditions: null
       required: false
@@ -2916,7 +2916,7 @@ fields:
         - o2m
       interface: list-o2m
       options:
-        template: 'Vente #{{id}} ({{revenue}})'
+        template: 'Vente #{{id}}({{sell_price}})'
         enableCreate: false
         enableSelect: false
       display: null
