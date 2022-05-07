@@ -18,6 +18,10 @@ function packProducts(sells: SellProduct[], packs: Pack[], packedSells: PackedSe
         // Try to get all the products that can fit into the pack
         let matchingSells: SellProduct[] = [];
         for (const requiredProductType of pack.requiredProductTypes) {
+            if (!requiredProductType) {
+                console.error(`Type de produit manquant pour le pack ${pack.name}`);
+                continue;
+            }
             matchingSells = [
                 ...matchingSells,
                 ...sells.filter(sell =>
