@@ -1,4 +1,5 @@
 import { createSell } from '@/api/sessions/createSell';
+import { useToast } from '@/composables/useToast';
 import { useSessionsStore } from '@/stores/sessions';
 import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
@@ -75,6 +76,7 @@ export const useSellStore = defineStore('sell', {
         },
         async confirmSell() {
             const sessionStore = useSessionsStore();
+            const toast = useToast();
 
             // Aggregate packs
             const packs = this.packing.packedSells.reduce((acc, { pack }) => {
@@ -100,6 +102,7 @@ export const useSellStore = defineStore('sell', {
                 });
                 // Reset the cart
                 this.cart = [];
+                toast.success('Vente ok !', { duration: 1500 });
             } catch (e) {
                 throw handleGQLError(e);
             }

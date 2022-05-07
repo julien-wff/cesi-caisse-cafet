@@ -12,5 +12,14 @@ export function useToast() {
         }).showToast();
     }
 
-    return { error };
+    function success(message: string, options: Toastify.Options = {}) {
+        Toastify({
+            text: message,
+            className: 'rounded-lg bg-none bg-success',
+            duration: 3000,
+            ...options,
+        }).showToast();
+    }
+
+    return { error, success };
 }
