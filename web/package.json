@@ -13,11 +13,13 @@
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
     "pinia": "^2.0.13",
+    "toastify-js": "^1.11.2",
     "upup": "^1.1.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "@types/toastify-js": "^1.11.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/compiler-sfc": "^3.2.33",
     "@vue/runtime-dom": "^3.2.33",

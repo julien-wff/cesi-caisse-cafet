@@ -31,3 +31,8 @@ declare interface UpUpSettings {
     'service-worker-url': string;
     scope: string;
 }
+
+// Toastify
+declare module 'toastify-js' {
+    export default Toastify;
+}

@@ -3,6 +3,7 @@ import { createPinia } from 'pinia';
 import router from './router';
 import App from './App.vue';
 import 'upup';
+import 'toastify-js/src/toastify.css';
 import './app.css';
 
 // Dayjs locale
