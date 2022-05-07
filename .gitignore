@@ -4,6 +4,8 @@ postgresql
 
 # Configs
 .env
+.env.prod
+.env.dev
 graphql
 
 # Editors
