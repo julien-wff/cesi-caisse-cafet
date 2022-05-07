@@ -1,6 +1,7 @@
+import { useToast } from '@/composables/useToast';
 import { gql } from 'graphql-request';
 import { Pack } from '@/types/pack';
-import { GraphQLClient } from '../client';
+import { ENDPOINT, GraphQLClient } from '../client';
 
 export function getPacks() {
     return GraphQLClient.request<RawPackResponse>(gql`
@@ -65,6 +66,8 @@ export interface RawPackResponse {
 }
 
 export function parseRawPackResponse(rawResponse: RawPackResponse): Pack[] {
+    const toast = useToast();
+
     return rawResponse.pack.map(pack => {
         const {
             id,
@@ -85,6 +88,13 @@ export function parseRawPackResponse(rawResponse: RawPackResponse): Pack[] {
             }
             : null;
         const excludedProducts = excluded_product.map(({ product_id }) => product_id);
+
+        // Show error if one of the required product types is null
+        if (requiredProductTypes.some(p => !p)) {
+            toast.error(`Type de produit manquant pour ${name}`, {
+                destination: `${ENDPOINT}/admin/content/pack/${id}`,
+            });
+        }
 
         return {
             id,
