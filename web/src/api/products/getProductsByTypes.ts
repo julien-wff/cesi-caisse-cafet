@@ -23,6 +23,8 @@ export function getProductsByTypes() {
                         height
                         width
                     }
+                    stock_management_enabled
+                    stock
                 }
             }
         }

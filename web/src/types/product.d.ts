@@ -7,6 +7,8 @@ export interface Product {
     };
     buy_price: number;
     sell_price: number;
+    stock: number;
+    stock_management_enabled: boolean;
     thumbnail?: {
         id: string;
         height: number;

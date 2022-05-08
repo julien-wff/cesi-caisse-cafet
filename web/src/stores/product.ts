@@ -22,5 +22,13 @@ export const useProductStore = defineStore('product', {
                 throw handleGQLError(e);
             }
         },
+        updateStock(productID: string, stock: number) {
+            for (const productType of this.productTypes) {
+                const productIndex = productType.product.findIndex(p => productID === p.id);
+                if (productIndex !== -1) {
+                    productType.product[productIndex].stock = stock;
+                }
+            }
+        },
     },
 });

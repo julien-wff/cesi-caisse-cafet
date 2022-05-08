@@ -1,6 +1,8 @@
 <template>
     <ProductCardIndicator :product="product">
-        <div class="card card-compact w-full bg-base-100 cursor-pointer select-none" @click="handleProductClick">
+        <div class="card card-compact w-full bg-base-100 cursor-pointer select-none"
+             :class="productOutOfStock ? 'outline outline-1 outline-error' : ''"
+             @click="handleProductClick">
             <figure v-if="product.thumbnail">
                 <img :alt="product.name"
                      :height="product.thumbnail.height"
@@ -20,6 +22,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useToast } from '@/composables/useToast';
 import { computed } from 'vue';
 import { ENDPOINT } from '@/api/client';
 import { useSellStore } from '@/stores/sell';
@@ -28,6 +31,7 @@ import { currencyFormat } from '@/utils/currency';
 import ProductCardIndicator from './ProductCardIndicator.vue';
 
 const sellStore = useSellStore();
+const toast = useToast();
 
 const props = defineProps<{
     product: Product,
@@ -37,8 +41,18 @@ const productPrice = computed(() => {
     return currencyFormat.format(props.product.sell_price);
 });
 
+const productOutOfStock = computed(() => {
+    return props.product.stock_management_enabled
+        && (props.product.stock <= 0 || sellStore.productCount(props.product) > props.product.stock);
+});
+
 function handleProductClick() {
-    if (sellStore.productCount(props.product) > 0) {
+    const productCount = sellStore.productCount(props.product);
+
+    if (props.product.stock_management_enabled && props.product.stock <= productCount)
+        toast.error(`${props.product.stock} en stock`, { duration: 2000 });
+
+    if (productCount > 0) {
         sellStore.addQuantity(props.product, 1);
     } else {
         sellStore.addToCart(props.product);

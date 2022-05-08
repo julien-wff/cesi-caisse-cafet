@@ -1,5 +1,6 @@
 import { createSell } from '@/api/sessions/createSell';
 import { useToast } from '@/composables/useToast';
+import { useProductStore } from '@/stores/product';
 import { useSessionsStore } from '@/stores/sessions';
 import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
@@ -76,6 +77,7 @@ export const useSellStore = defineStore('sell', {
         },
         async confirmSell() {
             const sessionStore = useSessionsStore();
+            const productStore = useProductStore();
             const toast = useToast();
 
             // Aggregate packs
@@ -89,7 +91,7 @@ export const useSellStore = defineStore('sell', {
             }, [] as { packID: string, quantity: number }[]);
 
             try {
-                await createSell({
+                const { productsStock } = await createSell({
                     sessionID: sessionStore.currentSession!.id,
                     revenue: this.revenue,
                     buyPrice: this.buyPrice,
@@ -100,6 +102,10 @@ export const useSellStore = defineStore('sell', {
                     })),
                     packs,
                 });
+                // Update the products stock
+                for (const { id, stock } of productsStock) {
+                    productStore.updateStock(id, stock);
+                }
                 // Reset the cart
                 this.cart = [];
                 toast.success('Vente ok !', { duration: 1500 });

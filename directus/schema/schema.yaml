@@ -956,7 +956,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 1
       width: full
       translations: null
       note: null
@@ -1018,7 +1018,7 @@ fields:
             background: '#A2B5CD'
       readonly: false
       hidden: false
-      sort: null
+      sort: 2
       width: full
       translations: null
       note: null
@@ -1061,7 +1061,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 3
       width: half
       translations: null
       note: null
@@ -1104,7 +1104,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: null
+      sort: 4
       width: half
       translations: null
       note: null
@@ -1147,7 +1147,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: null
+      sort: 5
       width: half
       translations: null
       note: null
@@ -1190,7 +1190,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: null
+      sort: 6
       width: half
       translations: null
       note: null
@@ -1232,7 +1232,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 7
       width: full
       translations:
         - language: fr-FR
@@ -1278,7 +1278,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 8
       width: half
       translations:
         - language: fr-FR
@@ -1324,7 +1324,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 9
       width: half
       translations:
         - language: fr-FR
@@ -1369,7 +1369,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 10
       width: full
       translations:
         - language: fr-FR
@@ -1414,7 +1414,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: null
+      sort: 13
       width: full
       translations:
         - language: fr-FR
@@ -1422,6 +1422,96 @@ fields:
       note: null
       conditions: null
       required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: product
+    field: stock_management_enabled
+    type: boolean
+    schema:
+      name: stock_management_enabled
+      table: product
+      schema: public
+      data_type: boolean
+      is_nullable: true
+      generation_expression: null
+      default_value: true
+      is_generated: false
+      max_length: null
+      comment: null
+      numeric_precision: null
+      numeric_scale: null
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_schema: null
+      foreign_key_table: null
+      foreign_key_column: null
+    meta:
+      collection: product
+      field: stock_management_enabled
+      special:
+        - cast-boolean
+      interface: boolean
+      options:
+        label: Activée
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 11
+      width: half
+      translations:
+        - language: fr-FR
+          translation: Gestion du stock
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: product
+    field: stock
+    type: integer
+    schema:
+      name: stock
+      table: product
+      schema: public
+      data_type: integer
+      is_nullable: true
+      generation_expression: null
+      default_value: 0
+      is_generated: false
+      max_length: null
+      comment: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_schema: null
+      foreign_key_table: null
+      foreign_key_column: null
+    meta:
+      collection: product
+      field: stock
+      special: null
+      interface: input
+      options:
+        min: null
+        iconLeft: inventory
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 12
+      width: half
+      translations:
+        - language: fr-FR
+          translation: Stock
+      note: null
+      conditions: null
+      required: true
       group: null
       validation: null
       validation_message: null
