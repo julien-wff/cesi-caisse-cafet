@@ -2,8 +2,8 @@
     <div class="bg-primary w-full h-24 p-8 flex items-center justify-between text-primary-content">
         <h2>Total : {{ totalPrice }}</h2>
         <button
-            :class="{'btn': true, 'btn-secondary': true, 'no-animation': sellStore.totalPrice <= 0}"
-            @click="sellStore.totalPrice > 0 && (showCheckoutModal = true)">
+            :class="{'btn': true, 'btn-secondary': true, 'no-animation': !allowCheckout}"
+            @click="allowCheckout && (showCheckoutModal = true)">
             Valider
             <DoubleArrow class="ml-3 w-5 h-5" fill="#FFF"/>
         </button>
@@ -24,6 +24,8 @@ const sellStore = useSellStore();
 const showCheckoutModal = ref(false);
 
 const totalPrice = computed(() => currencyFormat.format(sellStore.totalPrice));
+
+const allowCheckout = computed(() => sellStore.itemsCount > 0 && sellStore.totalPrice >= 0);
 
 watch([ sellStore ], () => {
     if (sellStore.itemsCount === 0 && showCheckoutModal.value)
