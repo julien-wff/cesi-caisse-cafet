@@ -6,7 +6,6 @@ import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
 import { handleGQLError } from '@/api/client';
 import { getPacks } from '@/api/packs/getPacks';
-import { useProductPacking } from '@/composables/useProductPacking';
 import { Pack } from '@/types/pack';
 import { Product } from '@/types/product';
 
@@ -15,6 +14,8 @@ export interface SellProduct {
     quantity: number;
 }
 
+export const DISCOUNT_VALUE = .2;
+
 export const useSellStore = defineStore('sell', {
     state: () => ({
         cart: [] as SellProduct[],
@@ -22,13 +23,12 @@ export const useSellStore = defineStore('sell', {
     }),
     getters: {
         totalPrice(): number {
-            const { packedSells, remainingProducts } = this.packing;
-            const packedSellsPrice = packedSells.reduce((total, sell) => total + sell.price, 0);
-            const remainingProductsPrice = remainingProducts.reduce(
-                (total, { product, quantity }) => total + product.sell_price * quantity,
-                0,
+            return roundMoney(
+                this.cart.reduce(
+                    (total, { product, quantity }) => total + product.sell_price * quantity,
+                    0,
+                ) - this.discount,
             );
-            return roundMoney(packedSellsPrice + remainingProductsPrice);
         },
         buyPrice(store) {
             return roundMoney(
@@ -38,6 +38,12 @@ export const useSellStore = defineStore('sell', {
         revenue(): number {
             return roundMoney(this.totalPrice - this.buyPrice);
         },
+        discount(): number {
+            return this.packCount * DISCOUNT_VALUE;
+        },
+        packCount(): number {
+            return Math.floor(this.itemsCount / 2);
+        },
         itemsCount(store) {
             return store.cart.reduce((total, { quantity }) => total + quantity, 0);
         },
@@ -45,9 +51,6 @@ export const useSellStore = defineStore('sell', {
             return (product: Product) => {
                 return store.cart.find(({ product: p }) => p.id === product.id)?.quantity || 0;
             };
-        },
-        packing(store) {
-            return useProductPacking(store.cart, store.packs);
         },
     },
     actions: {
@@ -81,14 +84,14 @@ export const useSellStore = defineStore('sell', {
             const toast = useToast();
 
             // Aggregate packs
-            const packs = this.packing.packedSells.reduce((acc, { pack }) => {
-                const packIndex = acc.findIndex(p => p.packID === pack.id);
-                if (packIndex === -1)
-                    acc.push({ packID: pack.id, quantity: 1 });
-                else
-                    acc[packIndex].quantity++;
-                return acc;
-            }, [] as { packID: string, quantity: number }[]);
+            // const packs = this.packing.packedSells.reduce((acc, { pack }) => {
+            //     const packIndex = acc.findIndex(p => p.packID === pack.id);
+            //     if (packIndex === -1)
+            //         acc.push({ packID: pack.id, quantity: 1 });
+            //     else
+            //         acc[packIndex].quantity++;
+            //     return acc;
+            // }, [] as { packID: string, quantity: number }[]);
 
             try {
                 const { productsStock } = await createSell({
@@ -100,7 +103,7 @@ export const useSellStore = defineStore('sell', {
                         productID: product.id,
                         quantity,
                     })),
-                    packs,
+                    packs: [],
                 });
                 // Update the products stock
                 for (const { id, stock } of productsStock) {

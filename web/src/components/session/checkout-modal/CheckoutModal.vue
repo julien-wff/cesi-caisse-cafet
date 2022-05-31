@@ -7,16 +7,14 @@
             </h3>
 
             <div class="pt-4">
-                <PackedSell v-for="packedSell in sellStore.packing.packedSells"
-                            :key="packedSell.pack.id"
-                            :packed-sell="packedSell"/>
                 <ul>
-                    <li v-for="{ product, quantity } in sellStore.packing.remainingProducts"
-                        :key="product.id"
-                        class="mb-4 font-bold">
+                    <li v-for="{ product, quantity } in sellStore.cart" :key="product.id" class="mb-2">
                         <ProductDisplay :product="product" :quantity="quantity"/>
                     </li>
                 </ul>
+                <p v-if="sellStore.discount > 0">
+                    Réductions : {{ sellStore.packCount }}x {{ currencyFormat.format(DISCOUNT_VALUE) }}
+                </p>
             </div>
 
             <p v-if="error" class="my-4 text-error font-bold">{{ error }}</p>
@@ -30,9 +28,8 @@
 
 <script lang="ts" setup>
 import ProductDisplay from '@/components/session/checkout-modal/ProductDisplay.vue';
-import { useSellStore } from '@/stores/sell';
+import { useSellStore, DISCOUNT_VALUE } from '@/stores/sell';
 import { ref, watch } from 'vue';
-import PackedSell from './PackedSell.vue';
 import { currencyFormat } from '@/utils/currency';
 
 const sellStore = useSellStore();
