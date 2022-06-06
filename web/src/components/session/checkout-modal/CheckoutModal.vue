@@ -6,7 +6,7 @@
                 Confirmation de la vente ({{ currencyFormat.format(sellStore.totalPrice) }})
             </h3>
 
-            <div class="pt-4">
+            <div class="pt-4 pb-2">
                 <ul>
                     <li v-for="{ product, quantity } in sellStore.cart" :key="product.id" class="mb-2">
                         <ProductDisplay :product="product" :quantity="quantity"/>
@@ -17,7 +17,7 @@
                 </p>
             </div>
 
-            <div class="form-control py-2">
+            <div class="form-control pb-2" v-if="sellStore.itemsCount <= MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION">
                 <label class="label cursor-pointer justify-start gap-3">
                     <input type="checkbox" v-model="openingReduction" class="checkbox checkbox-primary"/>
                     <span class="label-text">Offert pour l'ouverture</span>
@@ -42,6 +42,8 @@ import { useSellStore, DISCOUNT_VALUE } from '@/stores/sell';
 import { ref, watch } from 'vue';
 import { currencyFormat } from '@/utils/currency';
 
+const MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION = 2;
+
 const sellStore = useSellStore();
 
 const loading = ref(false);
@@ -65,9 +67,17 @@ function handleValidatingClick() {
         .finally(() => loading.value = false);
 }
 
-// Reset the error message when opening the modal
+// Reset opening reduction if there is too many products in the cart
+watch(sellStore.cart, () => {
+    if (sellStore.itemsCount > MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION && openingReduction.value)
+        openingReduction.value = false;
+});
+
+// Resets when opening the modal
 watch(props, () => {
     if (props.showCheckoutModal && error.value)
         error.value = null;
+    if (props.showCheckoutModal && openingReduction.value)
+        openingReduction.value = false;
 });
 </script>
