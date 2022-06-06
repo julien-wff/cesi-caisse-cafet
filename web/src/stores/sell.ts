@@ -5,8 +5,6 @@ import { useSessionsStore } from '@/stores/sessions';
 import { roundMoney } from '@/utils/roundMoney';
 import { defineStore } from 'pinia';
 import { handleGQLError } from '@/api/client';
-import { getPacks } from '@/api/packs/getPacks';
-import { Pack } from '@/types/pack';
 import { Product } from '@/types/product';
 
 export interface SellProduct {
@@ -19,7 +17,6 @@ export const DISCOUNT_VALUE = .2;
 export const useSellStore = defineStore('sell', {
     state: () => ({
         cart: [] as SellProduct[],
-        packs: [] as Pack[],
     }),
     getters: {
         totalPrice(): number {
@@ -54,14 +51,6 @@ export const useSellStore = defineStore('sell', {
         },
     },
     actions: {
-        async fetchPacks() {
-            try {
-                const { pack } = await getPacks();
-                this.packs = pack;
-            } catch (e) {
-                throw handleGQLError(e);
-            }
-        },
         addToCart(product: Product, quantity = 1) {
             this.cart.push({ product, quantity });
         },

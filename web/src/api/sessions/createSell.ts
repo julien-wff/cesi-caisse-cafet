@@ -41,7 +41,6 @@ export async function createSell(variables: CreateSellInput) {
                 $sell_buy_price: Float!
                 $sell_sell_price: Float!
                 $products: [create_sell_product_input]!
-                $packs: [create_sell_pack_input]!
                 $session_revenue: Float!
                 $session_buy_price: Float!
                 $session_sell_price: Float!
@@ -54,7 +53,6 @@ export async function createSell(variables: CreateSellInput) {
                         buy_price: $sell_buy_price
                         sell_price: $sell_sell_price
                         products: $products
-                        packs: $packs
                         opening_reduction: $opening_reduction
                     }
                 ) {
@@ -92,7 +90,6 @@ export async function createSell(variables: CreateSellInput) {
                 },
                 quantity: product.quantity,
             })),
-            packs: [],
             opening_reduction: variables.openingReduction,
             session_revenue: session.revenue + variables.revenue,
             session_buy_price: session.buy_price + variables.buyPrice,
