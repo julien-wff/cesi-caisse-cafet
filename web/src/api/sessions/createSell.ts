@@ -45,6 +45,7 @@ export async function createSell(variables: CreateSellInput) {
                 $session_revenue: Float!
                 $session_buy_price: Float!
                 $session_sell_price: Float!
+                $opening_reduction: Boolean!
             ) {
                 create_sell_item(
                     data: {
@@ -54,6 +55,7 @@ export async function createSell(variables: CreateSellInput) {
                         sell_price: $sell_sell_price
                         products: $products
                         packs: $packs
+                        opening_reduction: $opening_reduction
                     }
                 ) {
                     id
@@ -90,12 +92,8 @@ export async function createSell(variables: CreateSellInput) {
                 },
                 quantity: product.quantity,
             })),
-            packs: variables.packs.map(pack => ({
-                pack_id: {
-                    id: pack.packID,
-                },
-                quantity: pack.quantity,
-            })),
+            packs: [],
+            opening_reduction: variables.openingReduction,
             session_revenue: session.revenue + variables.revenue,
             session_buy_price: session.buy_price + variables.buyPrice,
             session_sell_price: session.sell_price + variables.sellPrice,
@@ -116,12 +114,9 @@ export interface CreateSellInput {
     revenue: number;
     buyPrice: number;
     sellPrice: number;
+    openingReduction: boolean;
     products: {
         productID: string;
-        quantity: number;
-    }[];
-    packs: {
-        packID: string;
         quantity: number;
     }[];
 }

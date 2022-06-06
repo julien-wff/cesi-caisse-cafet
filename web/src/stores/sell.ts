@@ -78,32 +78,26 @@ export const useSellStore = defineStore('sell', {
             else
                 this.cart[index].quantity = newQuantity;
         },
-        async confirmSell() {
+        async confirmSell(openingReduction = false) {
             const sessionStore = useSessionsStore();
             const productStore = useProductStore();
             const toast = useToast();
 
-            // Aggregate packs
-            // const packs = this.packing.packedSells.reduce((acc, { pack }) => {
-            //     const packIndex = acc.findIndex(p => p.packID === pack.id);
-            //     if (packIndex === -1)
-            //         acc.push({ packID: pack.id, quantity: 1 });
-            //     else
-            //         acc[packIndex].quantity++;
-            //     return acc;
-            // }, [] as { packID: string, quantity: number }[]);
+            // If there is an opening reduction, we lose the price of the products and the sell price is 0
+            const revenue = openingReduction ? -this.buyPrice : this.revenue;
+            const sellPrice = openingReduction ? 0 : this.totalPrice;
 
             try {
                 const { productsStock } = await createSell({
                     sessionID: sessionStore.currentSession!.id,
-                    revenue: this.revenue,
+                    revenue,
                     buyPrice: this.buyPrice,
-                    sellPrice: this.totalPrice,
+                    sellPrice,
                     products: this.cart.map(({ product, quantity }) => ({
                         productID: product.id,
                         quantity,
                     })),
-                    packs: [],
+                    openingReduction,
                 });
                 // Update the products stock
                 for (const { id, stock } of productsStock) {

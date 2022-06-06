@@ -17,9 +17,19 @@
                 </p>
             </div>
 
+            <div class="form-control py-2">
+                <label class="label cursor-pointer justify-start gap-3">
+                    <input type="checkbox" v-model="openingReduction" class="checkbox checkbox-primary"/>
+                    <span class="label-text">Offert pour l'ouverture</span>
+                </label>
+            </div>
+
             <p v-if="error" class="my-4 text-error font-bold">{{ error }}</p>
 
-            <button :disabled="loading" class="btn btn-primary w-full mt-2" @click="handleValidatingClick">
+            <button :disabled="loading"
+                    class="btn w-full mt-2"
+                    @click="handleValidatingClick"
+                    :class="{'btn-primary': !openingReduction, 'btn-accent': openingReduction}">
                 Valider
             </button>
         </div>
@@ -36,6 +46,7 @@ const sellStore = useSellStore();
 
 const loading = ref(false);
 const error = ref<string | null>(null);
+const openingReduction = ref(false);
 
 const emit = defineEmits<{
     (e: 'close'): void,
@@ -48,7 +59,7 @@ const props = defineProps<{
 function handleValidatingClick() {
     loading.value = true;
     error.value = null;
-    sellStore.confirmSell()
+    sellStore.confirmSell(openingReduction.value)
         .then(() => emit('close'))
         .catch(e => error.value = e.message)
         .finally(() => loading.value = false);

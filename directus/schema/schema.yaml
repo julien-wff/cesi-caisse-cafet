@@ -1,1008 +1,1297 @@
 version: 1
-directus: 9.10.0
+directus: 9.11.1
 collections:
   - collection: pack
     meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
       collection: pack
-      icon: backpack
-      note: null
+      color: null
       display_template: '{{name}}'
+      group: null
       hidden: false
+      icon: backpack
+      item_duplication_fields: null
+      note: null
       singleton: false
+      sort: 3
+      sort_field: null
       translations:
         - language: fr-FR
           translation: Pack de produits
           singular: pack de produits
           plural: packs de produits
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
       unarchive_value: null
-      sort_field: null
-      accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: 3
-      group: null
-      collapse: open
     schema:
-      schema: public
-      name: pack
       comment: null
+      name: pack
+      schema: public
   - collection: pack_product
     meta:
-      collection: pack_product
-      icon: import_export
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: pack_product
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
-      schema: public
-      name: pack_product
       comment: null
+      name: pack_product
+      schema: public
   - collection: pack_product_type
     meta:
-      collection: pack_product_type
-      icon: import_export
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: pack_product_type
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
-      schema: public
-      name: pack_product_type
       comment: null
+      name: pack_product_type
+      schema: public
   - collection: product
     meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: unavailable
+      collapse: open
       collection: product
-      icon: fastfood
-      note: null
+      color: null
       display_template: '{{name}}'
+      group: null
       hidden: false
+      icon: fastfood
+      item_duplication_fields: null
+      note: null
       singleton: false
+      sort: 1
+      sort_field: null
       translations:
         - language: fr-FR
           translation: Produit
           singular: produit
           plural: produits
-      archive_field: status
-      archive_app_filter: true
-      archive_value: unavailable
       unarchive_value: null
-      sort_field: null
-      accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: 1
-      group: null
-      collapse: open
     schema:
-      schema: public
-      name: product
       comment: null
+      name: product
+      schema: public
   - collection: product_type
     meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
       collection: product_type
-      icon: view_column
-      note: null
+      color: null
       display_template: '{{name}}'
+      group: null
       hidden: false
+      icon: view_column
+      item_duplication_fields: null
+      note: null
       singleton: false
+      sort: 2
+      sort_field: null
       translations:
         - language: fr-FR
           translation: Type de produit
           singular: type de produit
           plural: types de produit
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
       unarchive_value: null
-      sort_field: null
-      accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: 2
-      group: null
-      collapse: open
     schema:
-      schema: public
-      name: product_type
       comment: null
+      name: product_type
+      schema: public
   - collection: sell
     meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
       collection: sell
-      icon: monetization_on
-      note: null
+      color: null
       display_template: 'Vente #{{id}} ({{sell_price}})'
+      group: null
       hidden: false
+      icon: monetization_on
+      item_duplication_fields: null
+      note: null
       singleton: false
+      sort: 5
+      sort_field: null
       translations:
         - language: fr-FR
           translation: Ventes
           singular: vente
           plural: ventes
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
       unarchive_value: null
-      sort_field: null
-      accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: 5
-      group: null
-      collapse: open
     schema:
-      schema: public
-      name: sell
       comment: null
+      name: sell
+      schema: public
   - collection: sell_pack
     meta:
-      collection: sell_pack
-      icon: import_export
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: sell_pack
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
-      schema: public
-      name: sell_pack
       comment: null
+      name: sell_pack
+      schema: public
   - collection: sell_product
     meta:
-      collection: sell_product
-      icon: import_export
-      note: null
-      display_template: null
-      hidden: true
-      singleton: false
-      translations: null
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
-      unarchive_value: null
-      sort_field: null
       accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: null
-      group: null
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
       collapse: open
+      collection: sell_product
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
     schema:
-      schema: public
-      name: sell_product
       comment: null
+      name: sell_product
+      schema: public
   - collection: sessions
     meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
       collection: sessions
-      icon: schedule
-      note: null
+      color: null
       display_template: 'Session #{{id}} ({{sell_price}})'
+      group: null
       hidden: false
+      icon: schedule
+      item_duplication_fields: null
+      note: null
       singleton: false
+      sort: 4
+      sort_field: null
       translations:
         - language: fr-FR
           translation: Session
           singular: session
           plural: sessions
-      archive_field: null
-      archive_app_filter: true
-      archive_value: null
       unarchive_value: null
-      sort_field: null
-      accountability: all
-      color: null
-      item_duplication_fields: null
-      sort: 4
-      group: null
-      collapse: open
     schema:
-      schema: public
-      name: sessions
       comment: null
+      name: sessions
+      schema: public
 fields:
   - collection: pack
-    field: id
-    type: integer
+    field: base_sell_price
+    meta:
+      collection: pack
+      conditions: null
+      display: currency
+      display_options: null
+      field: base_sell_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: attach_money
+        max: 100
+        min: 0
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Prix de vente de base
+      validation: null
+      validation_message: null
+      width: full
     schema:
-      name: id
-      table: pack
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('pack_id_seq'::regclass)
-      is_generated: false
-      max_length: null
       comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
+      data_type: numeric
+      default_value: null
+      foreign_key_column: null
       foreign_key_schema: null
       foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack
-    field: user_created
-    type: uuid
-    schema:
-      name: user_created
-      table: pack
-      schema: public
-      data_type: uuid
-      is_nullable: true
       generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
       has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: pack
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 2
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: base_sell_price
+      numeric_precision: 10
+      numeric_scale: 5
+      schema: public
+      table: pack
+    type: decimal
   - collection: pack
     field: date_created
-    type: timestamp
-    schema:
-      name: date_created
-      table: pack
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
     meta:
       collection: pack
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
       field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
       special:
         - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 3
-      width: half
       translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
-  - collection: pack
-    field: user_updated
-    type: uuid
+      width: half
     schema:
-      name: user_updated
-      table: pack
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
       comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_created
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: pack
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
+      schema: public
+      table: pack
+    type: timestamp
   - collection: pack
     field: date_updated
-    type: timestamp
-    schema:
-      name: date_updated
-      table: pack
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
     meta:
       collection: pack
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
+      conditions: null
       display: datetime
       display_options:
         relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: date_updated
       group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
       validation: null
       validation_message: null
-  - collection: pack
-    field: name
-    type: string
+      width: half
     schema:
-      name: name
-      table: pack
-      schema: public
-      data_type: character varying
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: 255
       comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
       foreign_key_schema: null
       foreign_key_table: null
-      foreign_key_column: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: pack
+    type: timestamp
+  - collection: pack
+    field: excluded_product
     meta:
       collection: pack
-      field: name
-      special: null
-      interface: input
-      options:
-        iconLeft: drive_file_rename_outline
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: excluded_product
+      group: null
       hidden: false
-      sort: 6
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+      readonly: false
+      required: false
+      sort: null
+      special:
+        - m2m
+      translations:
+        - language: fr-FR
+          translation: Produits exclus du pack
+      validation: null
+      validation_message: null
       width: full
+    schema: null
+    type: alias
+  - collection: pack
+    field: id
+    meta:
+      collection: pack
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('pack_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack
+    type: integer
+  - collection: pack
+    field: maximum_product_count
+    meta:
+      collection: pack
+      conditions: null
+      display: null
+      display_options: null
+      field: maximum_product_count
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 100
+        min: 1
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Nombre maximum de produits
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: maximum_product_count
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack
+    type: integer
+  - collection: pack
+    field: minimum_product_count
+    meta:
+      collection: pack
+      conditions: null
+      display: null
+      display_options: null
+      field: minimum_product_count
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        max: 100
+        min: 0
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Nombre minimum de produits
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: minimum_product_count
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack
+    type: integer
+  - collection: pack
+    field: name
+    meta:
+      collection: pack
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: drive_file_rename_outline
+      readonly: false
+      required: true
+      sort: 6
+      special: null
       translations:
         - language: fr-FR
           translation: Nom du pack
-      note: null
-      conditions: null
-      required: true
-      group: null
       validation: null
       validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: character varying
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: name
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: pack
+    type: string
   - collection: pack
     field: product_price_ref
-    type: integer
-    schema:
-      name: product_price_ref
-      table: pack
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: product_type
-      foreign_key_column: id
     meta:
       collection: pack
-      field: product_price_ref
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: '{{name}}'
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: product_price_ref
+      group: null
       hidden: false
+      interface: select-dropdown-m2o
+      note: $t:product_price_ref_desc
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
       sort: 9
-      width: full
+      special:
+        - m2o
       translations:
         - language: en-US
           translation: Product for price reference
         - language: fr-FR
           translation: Produit pour le prix de référence
-      note: $t:product_price_ref_desc
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
-  - collection: pack
-    field: base_sell_price
-    type: decimal
-    schema:
-      name: base_sell_price
-      table: pack
-      schema: public
-      data_type: numeric
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 10
-      numeric_scale: 5
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack
-      field: base_sell_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        max: 100
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
       width: full
-      translations:
-        - language: fr-FR
-          translation: Prix de vente de base
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack
-    field: minimum_product_count
-    type: integer
     schema:
-      name: minimum_product_count
-      table: pack
-      schema: public
+      comment: null
       data_type: integer
-      is_nullable: true
-      generation_expression: null
       default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack
-      field: minimum_product_count
-      special: null
-      interface: input
-      options:
-        min: 0
-        max: 100
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Nombre minimum de produits
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack
-    field: maximum_product_count
-    type: integer
-    schema:
-      name: maximum_product_count
-      table: pack
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack
-      field: maximum_product_count
-      special: null
-      interface: input
-      options:
-        min: 1
-        max: 100
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Nombre maximum de produits
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: pack_product
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('pack_product_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack_product
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product
-    field: pack_id
-    type: integer
-    schema:
-      name: pack_id
-      table: pack_product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: pack
       foreign_key_column: id
-    meta:
-      collection: pack_product
-      field: pack_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product
-    field: product_id
-    type: integer
-    schema:
-      name: product_id
-      table: pack_product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: product
-      foreign_key_column: id
-    meta:
-      collection: pack_product
-      field: product_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product_type
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: pack_product_type
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('pack_product_type_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: pack_product_type
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product_type
-    field: pack_id
-    type: integer
-    schema:
-      name: pack_id
-      table: pack_product_type
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
-    meta:
-      collection: pack_product_type
-      field: pack_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack_product_type
-    field: product_type_id
-    type: integer
-    schema:
-      name: product_type_id
-      table: pack_product_type
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
       foreign_key_schema: public
       foreign_key_table: product_type
-      foreign_key_column: id
-    meta:
-      collection: pack_product_type
-      field: product_type_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: product
-      schema: public
-      data_type: integer
-      is_nullable: false
       generation_expression: null
-      default_value: nextval('product_id_seq'::regclass)
+      has_auto_increment: false
       is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
       max_length: null
-      comment: null
+      name: product_price_ref
       numeric_precision: 32
       numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
+      schema: public
+      table: pack
+    type: integer
+  - collection: pack
+    field: required_product_type
     meta:
-      collection: product
-      field: id
-      special: null
-      interface: input
-      options: null
+      collection: pack
+      conditions: null
       display: null
       display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: required_product_type
       group: null
+      hidden: false
+      interface: list-m2m
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 7
+      special:
+        - m2m
+      translations:
+        - language: fr-FR
+          translation: Types de produits requis
       validation: null
       validation_message: null
-  - collection: product
-    field: status
-    type: string
+      width: full
+    schema: null
+    type: alias
+  - collection: pack
+    field: user_created
+    meta:
+      collection: pack
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
     schema:
-      name: status
-      table: product
-      schema: public
-      data_type: character varying
-      is_nullable: true
-      generation_expression: null
-      default_value: available
-      is_generated: false
-      max_length: 255
       comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_created
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
+      schema: public
+      table: pack
+    type: uuid
+  - collection: pack
+    field: user_updated
+    meta:
+      collection: pack
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
       has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: pack
+    type: uuid
+  - collection: pack_product
+    field: id
+    meta:
+      collection: pack_product
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('pack_product_id_seq'::regclass)
+      foreign_key_column: null
       foreign_key_schema: null
       foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product
+    type: integer
+  - collection: pack_product
+    field: pack_id
+    meta:
+      collection: pack_product
+      conditions: null
+      display: null
+      display_options: null
+      field: pack_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: pack_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product
+    type: integer
+  - collection: pack_product
+    field: product_id
+    meta:
+      collection: pack_product
+      conditions: null
+      display: null
+      display_options: null
+      field: product_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: product_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product
+    type: integer
+  - collection: pack_product_type
+    field: id
+    meta:
+      collection: pack_product_type
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('pack_product_type_id_seq'::regclass)
       foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product_type
+    type: integer
+  - collection: pack_product_type
+    field: pack_id
+    meta:
+      collection: pack_product_type
+      conditions: null
+      display: null
+      display_options: null
+      field: pack_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: pack_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product_type
+    type: integer
+  - collection: pack_product_type
+    field: product_type_id
+    meta:
+      collection: pack_product_type
+      conditions: null
+      display: null
+      display_options: null
+      field: product_type_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product_type
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: product_type_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: pack_product_type
+    type: integer
+  - collection: product
+    field: buy_price
     meta:
       collection: product
-      field: status
-      special: null
-      interface: select-dropdown
+      conditions: null
+      display: currency
+      display_options: null
+      field: buy_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
       options:
-        choices:
-          - text: Disponible
-            value: available
-          - text: Rupture de stock
-            value: out_of_stock
-          - text: Indisponible
-            value: unavailable
+        iconLeft: money_off
+        max: 100
+        min: 0
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Prix d'achat
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: numeric
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: buy_price
+      numeric_precision: 10
+      numeric_scale: 5
+      schema: public
+      table: product
+    type: decimal
+  - collection: product
+    field: date_created
+    meta:
+      collection: product
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product
+    type: timestamp
+  - collection: product
+    field: date_updated
+    meta:
+      collection: product
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product
+    type: timestamp
+  - collection: product
+    field: id
+    meta:
+      collection: product
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('product_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: product
+    type: integer
+  - collection: product
+    field: name
+    meta:
+      collection: product
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: drive_file_rename_outline
+      readonly: false
+      required: true
+      sort: 7
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Nom du produit
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: character varying
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: name
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product
+    type: string
+  - collection: product
+    field: product_type
+    meta:
+      collection: product
+      conditions: null
+      display: null
+      display_options: null
+      field: product_type
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: true
+      sort: 10
+      special:
+        - m2o
+      translations:
+        - language: fr-FR
+          translation: Type de produit
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product_type
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: product_type
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: product
+    type: integer
+  - collection: product
+    field: sell_price
+    meta:
+      collection: product
+      conditions: null
+      display: currency
+      display_options: null
+      field: sell_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: attach_money
+        max: 100
+        min: 0
+      readonly: false
+      required: true
+      sort: 9
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Prix de vente
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: numeric
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: sell_price
+      numeric_precision: 10
+      numeric_scale: 5
+      schema: public
+      table: product
+    type: decimal
+  - collection: product
+    field: status
+    meta:
+      collection: product
+      conditions: null
       display: labels
       display_options:
-        showAsDot: true
         choices:
           - text: Disponible
             value: available
@@ -1016,2496 +1305,2251 @@ fields:
             value: unavailable
             foreground: '#FFFFFF'
             background: '#A2B5CD'
-      readonly: false
+        showAsDot: true
+      field: status
+      group: null
       hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: Disponible
+            value: available
+          - text: Rupture de stock
+            value: out_of_stock
+          - text: Indisponible
+            value: unavailable
+      readonly: false
+      required: false
       sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
       width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: user_created
-    type: uuid
     schema:
-      name: user_created
-      table: product
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
       comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: product
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 3
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: date_created
-    type: timestamp
-    schema:
-      name: date_created
-      table: product
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: user_updated
-    type: uuid
-    schema:
-      name: user_updated
-      table: product
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: product
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: date_updated
-    type: timestamp
-    schema:
-      name: date_updated
-      table: product
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 6
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: name
-    type: string
-    schema:
-      name: name
-      table: product
-      schema: public
       data_type: character varying
-      is_nullable: true
+      default_value: available
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
       generation_expression: null
-      default_value: null
+      has_auto_increment: false
       is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
       max_length: 255
-      comment: null
+      name: status
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: name
-      special: null
-      interface: input
-      options:
-        iconLeft: drive_file_rename_outline
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Nom du produit
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: buy_price
-    type: decimal
-    schema:
-      name: buy_price
-      table: product
       schema: public
-      data_type: numeric
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 10
-      numeric_scale: 5
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: buy_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        max: 100
-        iconLeft: money_off
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Prix d'achat
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: sell_price
-    type: decimal
-    schema:
-      name: sell_price
       table: product
-      schema: public
-      data_type: numeric
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 10
-      numeric_scale: 5
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: sell_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        max: 100
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 9
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Prix de vente
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: product_type
-    type: integer
-    schema:
-      name: product_type
-      table: product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: product_type
-      foreign_key_column: id
-    meta:
-      collection: product
-      field: product_type
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: '{{name}}'
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 10
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Type de produit
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: thumbnail
-    type: uuid
-    schema:
-      name: thumbnail
-      table: product
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      foreign_key_column: id
-    meta:
-      collection: product
-      field: thumbnail
-      special:
-        - file
-      interface: file-image
-      options:
-        folder: e8927ab8-3283-4731-9671-26e97fd851da
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 13
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Image du produit
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product
-    field: stock_management_enabled
-    type: boolean
-    schema:
-      name: stock_management_enabled
-      table: product
-      schema: public
-      data_type: boolean
-      is_nullable: true
-      generation_expression: null
-      default_value: true
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product
-      field: stock_management_enabled
-      special:
-        - cast-boolean
-      interface: boolean
-      options:
-        label: Activée
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 11
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Gestion du stock
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
+    type: string
   - collection: product
     field: stock
-    type: integer
-    schema:
-      name: stock
-      table: product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: 0
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
     meta:
       collection: product
-      field: stock
-      special: null
-      interface: input
-      options:
-        min: null
-        iconLeft: inventory
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: stock
+      group: null
       hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: inventory
+        min: null
+      readonly: false
+      required: true
       sort: 12
-      width: half
+      special: null
       translations:
         - language: fr-FR
           translation: Stock
-      note: null
-      conditions: null
-      required: true
-      group: null
       validation: null
       validation_message: null
-  - collection: product_type
-    field: id
-    type: integer
+      width: half
     schema:
-      name: id
-      table: product_type
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('product_type_id_seq'::regclass)
-      is_generated: false
-      max_length: null
       comment: null
+      data_type: integer
+      default_value: 0
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: stock
       numeric_precision: 32
       numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
+      schema: public
+      table: product
+    type: integer
+  - collection: product
+    field: stock_management_enabled
     meta:
-      collection: product_type
-      field: id
-      special: null
-      interface: input
-      options: null
+      collection: product
+      conditions: null
       display: null
       display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: stock_management_enabled
       group: null
+      hidden: false
+      interface: boolean
+      note: null
+      options:
+        label: Activée
+      readonly: false
+      required: true
+      sort: 11
+      special:
+        - cast-boolean
+      translations:
+        - language: fr-FR
+          translation: Gestion du stock
       validation: null
       validation_message: null
-  - collection: product_type
-    field: user_created
-    type: uuid
+      width: half
     schema:
-      name: user_created
-      table: product_type
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
       comment: null
+      data_type: boolean
+      default_value: true
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: stock_management_enabled
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
+      schema: public
+      table: product
+    type: boolean
+  - collection: product
+    field: thumbnail
     meta:
-      collection: product_type
+      collection: product
+      conditions: null
+      display: null
+      display_options: null
+      field: thumbnail
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options:
+        folder: e8927ab8-3283-4731-9671-26e97fd851da
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Image du produit
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_files
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: thumbnail
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product
+    type: uuid
+  - collection: product
+    field: user_created
+    meta:
+      collection: product
+      conditions: null
+      display: user
+      display_options: null
       field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 3
       special:
         - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
       translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
-  - collection: product_type
-    field: date_created
-    type: timestamp
+      width: half
     schema:
-      name: date_created
-      table: product_type
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
       comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: product_type
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product_type
-    field: user_updated
-    type: uuid
-    schema:
-      name: user_updated
-      table: product_type
-      schema: public
       data_type: uuid
-      is_nullable: true
-      generation_expression: null
       default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
+      foreign_key_column: id
       foreign_key_schema: public
       foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: product_type
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: product_type
-    field: date_updated
-    type: timestamp
-    schema:
-      name: date_updated
-      table: product_type
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
       generation_expression: null
-      default_value: null
+      has_auto_increment: false
       is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
       max_length: null
-      comment: null
+      name: user_created
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
+      schema: public
+      table: product
+    type: uuid
+  - collection: product
+    field: user_updated
+    meta:
+      collection: product
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
       has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product
+    type: uuid
+  - collection: product_type
+    field: date_created
     meta:
       collection: product_type
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
+      conditions: null
       display: datetime
       display_options:
         relative: true
-      readonly: true
-      hidden: true
-      sort: null
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
+      field: date_created
       group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - date-created
+      translations: null
       validation: null
       validation_message: null
-  - collection: product_type
-    field: name
-    type: string
+      width: half
     schema:
-      name: name
-      table: product_type
-      schema: public
-      data_type: character varying
-      is_nullable: false
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: 255
       comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
       foreign_key_schema: null
       foreign_key_table: null
-      foreign_key_column: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product_type
+    type: timestamp
+  - collection: product_type
+    field: date_updated
     meta:
       collection: product_type
-      field: name
-      special: null
-      interface: input
-      options:
-        iconLeft: drive_file_rename_outline
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product_type
+    type: timestamp
+  - collection: product_type
+    field: id
+    meta:
+      collection: product_type
+      conditions: null
       display: null
       display_options: null
-      readonly: false
-      hidden: false
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
       sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
       width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('product_type_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: product_type
+    type: integer
+  - collection: product_type
+    field: name
+    meta:
+      collection: product_type
+      conditions: null
+      display: null
+      display_options: null
+      field: name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: drive_file_rename_outline
+      readonly: false
+      required: true
+      sort: null
+      special: null
       translations:
         - language: fr-FR
           translation: Nom du type
-      note: null
-      conditions: null
-      required: true
-      group: null
       validation: null
       validation_message: null
-  - collection: sell
-    field: id
-    type: integer
+      width: full
     schema:
-      name: id
-      table: sell
-      schema: public
-      data_type: integer
+      comment: null
+      data_type: character varying
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
       is_nullable: false
-      generation_expression: null
-      default_value: nextval('sell_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: user_created
-    type: uuid
-    schema:
-      name: user_created
-      table: sell
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
+      is_primary_key: false
+      is_unique: false
+      max_length: 255
+      name: name
       numeric_precision: null
       numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: sell
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: false
-      sort: 2
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Créateur
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: date_created
-    type: timestamp
-    schema:
-      name: date_created
-      table: sell
       schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: false
-      sort: 3
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Date de création
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: user_updated
-    type: uuid
-    schema:
-      name: user_updated
-      table: sell
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: sell
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: date_updated
-    type: timestamp
-    schema:
-      name: date_updated
-      table: sell
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: session
-    type: integer
-    schema:
-      name: session
-      table: sell
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: sessions
-      foreign_key_column: id
-    meta:
-      collection: sell
-      field: session
-      special:
-        - m2o
-      interface: select-dropdown-m2o
-      options:
-        template: 'Session #{{id}} ({{date_created}})'
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 6
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Session
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: revenue
-    type: float
-    schema:
-      name: revenue
-      table: sell
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: revenue
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Bénéfice
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: buy_price
-    type: float
-    schema:
-      name: buy_price
-      table: sell
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: buy_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: money_off
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Coût des produits
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell
-    field: sell_price
-    type: float
-    schema:
-      name: sell_price
-      table: sell
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell
-      field: sell_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 9
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Prix de vente
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_pack
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: sell_pack
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('sell_pack_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell_pack
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_pack
-    field: sell_id
-    type: integer
-    schema:
-      name: sell_id
-      table: sell_pack
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: sell
-      foreign_key_column: id
-    meta:
-      collection: sell_pack
-      field: sell_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_pack
-    field: pack_id
-    type: integer
-    schema:
-      name: pack_id
-      table: sell_pack
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
-    meta:
-      collection: sell_pack
-      field: pack_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_pack
-    field: quantity
-    type: integer
-    schema:
-      name: quantity
-      table: sell_pack
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: 1
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell_pack
-      field: quantity
-      special: null
-      interface: input
-      options:
-        min: 1
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_product
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: sell_product
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('sell_product_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell_product
-      field: id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_product
-    field: sell_id
-    type: integer
-    schema:
-      name: sell_id
-      table: sell_product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: sell
-      foreign_key_column: id
-    meta:
-      collection: sell_product
-      field: sell_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_product
-    field: product_id
-    type: integer
-    schema:
-      name: product_id
-      table: sell_product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: product
-      foreign_key_column: id
-    meta:
-      collection: sell_product
-      field: product_id
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: true
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sell_product
-    field: quantity
-    type: integer
-    schema:
-      name: quantity
-      table: sell_product
-      schema: public
-      data_type: integer
-      is_nullable: true
-      generation_expression: null
-      default_value: 1
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sell_product
-      field: quantity
-      special: null
-      interface: input
-      options:
-        min: 1
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: id
-    type: integer
-    schema:
-      name: id
-      table: sessions
-      schema: public
-      data_type: integer
-      is_nullable: false
-      generation_expression: null
-      default_value: nextval('sessions_id_seq'::regclass)
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 32
-      numeric_scale: 0
-      is_unique: true
-      is_primary_key: true
-      has_auto_increment: true
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: id
-      special: null
-      interface: input
-      options: null
-      display: null
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 1
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: user_created
-    type: uuid
-    schema:
-      name: user_created
-      table: sessions
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: sessions
-      field: user_created
-      special:
-        - user-created
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: false
-      sort: 2
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Créateur
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: date_created
-    type: timestamp
-    schema:
-      name: date_created
-      table: sessions
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: date_created
-      special:
-        - date-created
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: false
-      sort: 3
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Date de création
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: user_updated
-    type: uuid
-    schema:
-      name: user_updated
-      table: sessions
-      schema: public
-      data_type: uuid
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: sessions
-      field: user_updated
-      special:
-        - user-updated
-      interface: select-dropdown-m2o
-      options:
-        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
-      display: user
-      display_options: null
-      readonly: true
-      hidden: true
-      sort: 4
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: date_updated
-    type: timestamp
-    schema:
-      name: date_updated
-      table: sessions
-      schema: public
-      data_type: timestamp with time zone
-      is_nullable: true
-      generation_expression: null
-      default_value: null
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: null
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: date_updated
-      special:
-        - date-updated
-      interface: datetime
-      options: null
-      display: datetime
-      display_options:
-        relative: true
-      readonly: true
-      hidden: true
-      sort: 5
-      width: half
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: revenue
-    type: float
-    schema:
-      name: revenue
-      table: sessions
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: 0
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: revenue
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 8
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Bénéfice
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: buy_price
-    type: float
-    schema:
-      name: buy_price
-      table: sessions
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: 0
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: buy_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: money_off
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 6
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Coût des produits
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sessions
-    field: sell_price
-    type: float
-    schema:
-      name: sell_price
-      table: sessions
-      schema: public
-      data_type: real
-      is_nullable: true
-      generation_expression: null
-      default_value: 0
-      is_generated: false
-      max_length: null
-      comment: null
-      numeric_precision: 24
-      numeric_scale: null
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: sessions
-      field: sell_price
-      special: null
-      interface: input
-      options:
-        min: 0
-        iconRight: null
-        iconLeft: attach_money
-      display: currency
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: half
-      translations:
-        - language: fr-FR
-          translation: Argent encaissé
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack
-    field: required_product_type
-    type: alias
-    schema: null
-    meta:
-      collection: pack
-      field: required_product_type
-      special:
-        - m2m
-      interface: list-m2m
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 7
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Types de produits requis
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: pack
-    field: excluded_product
-    type: alias
-    schema: null
-    meta:
-      collection: pack
-      field: excluded_product
-      special:
-        - m2m
-      interface: list-m2m
-      options:
-        enableCreate: false
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: null
-      width: full
-      translations:
-        - language: fr-FR
-          translation: Produits exclus du pack
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
+      table: product_type
+    type: string
   - collection: product_type
     field: product
-    type: alias
-    schema: null
     meta:
       collection: product_type
-      field: product
-      special:
-        - o2m
-      interface: list-o2m
-      options:
-        template: '{{name}}'
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: product
+      group: null
       hidden: false
+      interface: list-o2m
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
       sort: null
-      width: full
+      special:
+        - o2m
       translations:
         - language: fr-FR
           translation: Produits liés
-      note: null
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
-  - collection: sell
-    field: packs
-    type: alias
+      width: full
     schema: null
+    type: alias
+  - collection: product_type
+    field: user_created
+    meta:
+      collection: product_type
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product_type
+    type: uuid
+  - collection: product_type
+    field: user_updated
+    meta:
+      collection: product_type
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: null
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: product_type
+    type: uuid
+  - collection: sell
+    field: buy_price
     meta:
       collection: sell
-      field: packs
-      special:
-        - m2m
-      interface: list-m2m
+      conditions: null
+      display: currency
+      display_options: null
+      field: buy_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
       options:
-        enableCreate: false
-        template: "{{quantity}}x\_{{pack_id.name}}"
-        enableSelect: false
+        iconLeft: money_off
+        iconRight: null
+        min: 0
+      readonly: false
+      required: true
+      sort: 8
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Coût des produits
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: real
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: buy_price
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: float
+  - collection: sell
+    field: date_created
+    meta:
+      collection: sell
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations:
+        - language: fr-FR
+          translation: Date de création
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: timestamp
+  - collection: sell
+    field: date_updated
+    meta:
+      collection: sell
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: timestamp
+  - collection: sell
+    field: id
+    meta:
+      collection: sell
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('sell_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell
+    type: integer
+  - collection: sell
+    field: opening_reduction
+    meta:
+      collection: sell
+      conditions: null
+      display: null
+      display_options: null
+      field: opening_reduction
+      group: null
       hidden: false
+      interface: boolean
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special:
+        - cast-boolean
+      translations:
+        - language: fr-FR
+          translation: Offert pour l'ouverture
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: boolean
+      default_value: false
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: opening_reduction
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: boolean
+  - collection: sell
+    field: packs
+    meta:
+      collection: sell
+      conditions: null
+      display: null
+      display_options: null
+      field: packs
+      group: null
+      hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+        enableSelect: false
+        template: "{{quantity}}x\_{{pack_id.name}}"
+      readonly: false
+      required: false
       sort: 11
-      width: half
+      special:
+        - m2m
       translations:
         - language: fr-FR
           translation: Packs vendus
-      note: null
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
+      width: half
+    schema: null
+    type: alias
   - collection: sell
     field: products
-    type: alias
-    schema: null
     meta:
       collection: sell
-      field: products
-      special:
-        - m2m
-      interface: list-m2m
-      options:
-        template: "{{quantity}}x\_{{product_id.name}}"
-        enableCreate: false
-        enableSelect: false
+      conditions: null
       display: null
       display_options: null
-      readonly: false
+      field: products
+      group: null
       hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+        enableSelect: false
+        template: "{{quantity}}x\_{{product_id.name}}"
+      readonly: false
+      required: true
       sort: 10
-      width: half
+      special:
+        - m2m
       translations:
         - language: fr-FR
           translation: Produits vendus
-      note: null
-      conditions: null
-      required: true
-      group: null
       validation: null
       validation_message: null
-  - collection: sessions
-    field: sells
-    type: alias
+      width: half
     schema: null
+    type: alias
+  - collection: sell
+    field: revenue
     meta:
-      collection: sessions
-      field: sells
-      special:
-        - o2m
-      interface: list-o2m
+      collection: sell
+      conditions: null
+      display: currency
+      display_options: null
+      field: revenue
+      group: null
+      hidden: false
+      interface: input
+      note: null
       options:
-        template: 'Vente #{{id}}({{sell_price}})'
-        enableCreate: false
-        enableSelect: false
+        iconLeft: attach_money
+        iconRight: null
+        min: 0
+      readonly: false
+      required: true
+      sort: 7
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Bénéfice
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: real
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: revenue
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: float
+  - collection: sell
+    field: sell_price
+    meta:
+      collection: sell
+      conditions: null
+      display: currency
+      display_options: null
+      field: sell_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: attach_money
+        iconRight: null
+        min: 0
+      readonly: false
+      required: true
+      sort: 9
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Prix de vente
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: real
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: sell_price
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: float
+  - collection: sell
+    field: session
+    meta:
+      collection: sell
+      conditions: null
       display: null
       display_options: null
-      readonly: true
+      field: session
+      group: null
       hidden: false
-      sort: 9
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: 'Session #{{id}} ({{date_created}})'
+      readonly: false
+      required: true
+      sort: 6
+      special:
+        - m2o
+      translations:
+        - language: fr-FR
+          translation: Session
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sessions
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: session
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell
+    type: integer
+  - collection: sell
+    field: user_created
+    meta:
+      collection: sell
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations:
+        - language: fr-FR
+          translation: Créateur
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: uuid
+  - collection: sell
+    field: user_updated
+    meta:
+      collection: sell
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sell
+    type: uuid
+  - collection: sell_pack
+    field: id
+    meta:
+      collection: sell_pack
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
       width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('sell_pack_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_pack
+    type: integer
+  - collection: sell_pack
+    field: pack_id
+    meta:
+      collection: sell_pack
+      conditions: null
+      display: null
+      display_options: null
+      field: pack_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: pack_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_pack
+    type: integer
+  - collection: sell_pack
+    field: quantity
+    meta:
+      collection: sell_pack
+      conditions: null
+      display: null
+      display_options: null
+      field: quantity
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        min: 1
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: 1
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: quantity
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_pack
+    type: integer
+  - collection: sell_pack
+    field: sell_id
+    meta:
+      collection: sell_pack
+      conditions: null
+      display: null
+      display_options: null
+      field: sell_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sell
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: sell_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_pack
+    type: integer
+  - collection: sell_product
+    field: id
+    meta:
+      collection: sell_product
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('sell_product_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_product
+    type: integer
+  - collection: sell_product
+    field: product_id
+    meta:
+      collection: sell_product
+      conditions: null
+      display: null
+      display_options: null
+      field: product_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: product_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_product
+    type: integer
+  - collection: sell_product
+    field: quantity
+    meta:
+      collection: sell_product
+      conditions: null
+      display: null
+      display_options: null
+      field: quantity
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        min: 1
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: 1
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: quantity
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_product
+    type: integer
+  - collection: sell_product
+    field: sell_id
+    meta:
+      collection: sell_product
+      conditions: null
+      display: null
+      display_options: null
+      field: sell_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sell
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: sell_id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sell_product
+    type: integer
+  - collection: sessions
+    field: buy_price
+    meta:
+      collection: sessions
+      conditions: null
+      display: currency
+      display_options: null
+      field: buy_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: money_off
+        iconRight: null
+        min: 0
+      readonly: false
+      required: false
+      sort: 6
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Coût des produits
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: real
+      default_value: 0
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: buy_price
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: float
+  - collection: sessions
+    field: date_created
+    meta:
+      collection: sessions
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: false
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 3
+      special:
+        - date-created
+      translations:
+        - language: fr-FR
+          translation: Date de création
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: timestamp
+  - collection: sessions
+    field: date_updated
+    meta:
+      collection: sessions
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: timestamp with time zone
+      default_value: null
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: date_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: timestamp
+  - collection: sessions
+    field: id
+    meta:
+      collection: sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: integer
+      default_value: nextval('sessions_id_seq'::regclass)
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: true
+      is_generated: false
+      is_nullable: false
+      is_primary_key: true
+      is_unique: true
+      max_length: null
+      name: id
+      numeric_precision: 32
+      numeric_scale: 0
+      schema: public
+      table: sessions
+    type: integer
+  - collection: sessions
+    field: revenue
+    meta:
+      collection: sessions
+      conditions: null
+      display: currency
+      display_options: null
+      field: revenue
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: attach_money
+        iconRight: null
+        min: 0
+      readonly: false
+      required: false
+      sort: 8
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Bénéfice
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      comment: null
+      data_type: real
+      default_value: 0
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: revenue
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: float
+  - collection: sessions
+    field: sell_price
+    meta:
+      collection: sessions
+      conditions: null
+      display: currency
+      display_options: null
+      field: sell_price
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        iconLeft: attach_money
+        iconRight: null
+        min: 0
+      readonly: false
+      required: false
+      sort: 7
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Argent encaissé
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: real
+      default_value: 0
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: sell_price
+      numeric_precision: 24
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: float
+  - collection: sessions
+    field: sells
+    meta:
+      collection: sessions
+      conditions: null
+      display: null
+      display_options: null
+      field: sells
+      group: null
+      hidden: false
+      interface: list-o2m
+      note: null
+      options:
+        enableCreate: false
+        enableSelect: false
+        template: 'Vente #{{id}}({{sell_price}})'
+      readonly: true
+      required: false
+      sort: 9
+      special:
+        - o2m
       translations:
         - language: fr-FR
           translation: Ventes
-      note: null
-      conditions: null
-      required: false
-      group: null
       validation: null
       validation_message: null
+      width: full
+    schema: null
+    type: alias
+  - collection: sessions
+    field: user_created
+    meta:
+      collection: sessions
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 2
+      special:
+        - user-created
+      translations:
+        - language: fr-FR
+          translation: Créateur
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_created
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: uuid
+  - collection: sessions
+    field: user_updated
+    meta:
+      collection: sessions
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      comment: null
+      data_type: uuid
+      default_value: null
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: user_updated
+      numeric_precision: null
+      numeric_scale: null
+      schema: public
+      table: sessions
+    type: uuid
 relations:
-  - collection: pack_product
-    field: pack_id
-    related_collection: pack
-    schema:
-      constraint_name: pack_product_pack_id_foreign
-      table: pack_product
-      column: pack_id
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: pack_product
-      many_field: pack_id
-      one_collection: pack
-      one_field: excluded_product
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: product_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell_pack
-    field: pack_id
-    related_collection: pack
-    schema:
-      constraint_name: sell_pack_pack_id_foreign
-      table: sell_pack
-      column: pack_id
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: sell_pack
-      many_field: pack_id
-      one_collection: pack
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: sell_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: pack_product_type
-    field: pack_id
-    related_collection: pack
-    schema:
-      constraint_name: pack_product_type_pack_id_foreign
-      table: pack_product_type
-      column: pack_id
-      foreign_key_schema: public
-      foreign_key_table: pack
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: pack_product_type
-      many_field: pack_id
-      one_collection: pack
-      one_field: required_product_type
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: product_type_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: pack_product
-    field: product_id
-    related_collection: product
-    schema:
-      constraint_name: pack_product_product_id_foreign
-      table: pack_product
-      column: product_id
-      foreign_key_schema: public
-      foreign_key_table: product
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: pack_product
-      many_field: product_id
-      one_collection: product
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: pack_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell_product
-    field: product_id
-    related_collection: product
-    schema:
-      constraint_name: sell_product_product_id_foreign
-      table: sell_product
-      column: product_id
-      foreign_key_schema: public
-      foreign_key_table: product
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: sell_product
-      many_field: product_id
-      one_collection: product
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: sell_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell_product
-    field: sell_id
-    related_collection: sell
-    schema:
-      constraint_name: sell_product_sell_id_foreign
-      table: sell_product
-      column: sell_id
-      foreign_key_schema: public
-      foreign_key_table: sell
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: sell_product
-      many_field: sell_id
-      one_collection: sell
-      one_field: products
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: product_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell_pack
-    field: sell_id
-    related_collection: sell
-    schema:
-      constraint_name: sell_pack_sell_id_foreign
-      table: sell_pack
-      column: sell_id
-      foreign_key_schema: public
-      foreign_key_table: sell
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: sell_pack
-      many_field: sell_id
-      one_collection: sell
-      one_field: packs
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: pack_id
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell
-    field: session
-    related_collection: sessions
-    schema:
-      constraint_name: sell_session_foreign
-      table: sell
-      column: session
-      foreign_key_schema: public
-      foreign_key_table: sessions
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: sell
-      many_field: session
-      one_collection: sessions
-      one_field: sells
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product_type
-    field: user_created
-    related_collection: directus_users
-    schema:
-      constraint_name: product_type_user_created_foreign
-      table: product_type
-      column: user_created
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: product_type
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product_type
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      constraint_name: product_type_user_updated_foreign
-      table: product_type
-      column: user_updated
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: product_type
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sessions
-    field: user_created
-    related_collection: directus_users
-    schema:
-      constraint_name: sessions_user_created_foreign
-      table: sessions
-      column: user_created
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: sessions
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sessions
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      constraint_name: sessions_user_updated_foreign
-      table: sessions
-      column: user_updated
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: sessions
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell
-    field: user_created
-    related_collection: directus_users
-    schema:
-      constraint_name: sell_user_created_foreign
-      table: sell
-      column: user_created
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: sell
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: sell
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      constraint_name: sell_user_updated_foreign
-      table: sell
-      column: user_updated
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: sell
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product
-    field: user_created
-    related_collection: directus_users
-    schema:
-      constraint_name: product_user_created_foreign
-      table: product
-      column: user_created
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: product
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      constraint_name: product_user_updated_foreign
-      table: product
-      column: user_updated
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: product
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: pack
-    field: user_created
-    related_collection: directus_users
-    schema:
-      constraint_name: pack_user_created_foreign
-      table: pack
-      column: user_created
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: pack
-      many_field: user_created
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: pack
-    field: user_updated
-    related_collection: directus_users
-    schema:
-      constraint_name: pack_user_updated_foreign
-      table: pack
-      column: user_updated
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta:
-      many_collection: pack
-      many_field: user_updated
-      one_collection: directus_users
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product
-    field: thumbnail
-    related_collection: directus_files
-    schema:
-      constraint_name: product_thumbnail_foreign
-      table: product
-      column: thumbnail
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: product
-      many_field: thumbnail
-      one_collection: directus_files
-      one_field: null
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
-  - collection: product
-    field: product_type
-    related_collection: product_type
-    schema:
-      constraint_name: product_product_type_foreign
-      table: product
-      column: product_type
-      foreign_key_schema: public
-      foreign_key_table: product_type
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
-    meta:
-      many_collection: product
-      many_field: product_type
-      one_collection: product_type
-      one_field: product
-      one_collection_field: null
-      one_allowed_collections: null
-      junction_field: null
-      sort_field: null
-      one_deselect_action: nullify
   - collection: pack
     field: product_price_ref
-    related_collection: product_type
-    schema:
-      constraint_name: pack_product_price_ref_foreign
-      table: pack
-      column: product_price_ref
-      foreign_key_schema: public
-      foreign_key_table: product_type
-      foreign_key_column: id
-      on_update: NO ACTION
-      on_delete: SET NULL
     meta:
+      junction_field: null
       many_collection: pack
       many_field: product_price_ref
-      one_collection: product_type
-      one_field: null
-      one_collection_field: null
       one_allowed_collections: null
-      junction_field: null
-      sort_field: null
+      one_collection: product_type
+      one_collection_field: null
       one_deselect_action: nullify
-  - collection: pack_product_type
-    field: product_type_id
+      one_field: null
+      sort_field: null
     related_collection: product_type
     schema:
-      constraint_name: pack_product_type_product_type_id_foreign
-      table: pack_product_type
-      column: product_type_id
+      column: product_price_ref
+      constraint_name: pack_product_price_ref_foreign
+      foreign_key_column: id
       foreign_key_schema: public
       foreign_key_table: product_type
-      foreign_key_column: id
-      on_update: NO ACTION
       on_delete: SET NULL
+      on_update: NO ACTION
+      table: pack
+  - collection: pack
+    field: user_created
     meta:
+      junction_field: null
+      many_collection: pack
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: pack_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: pack
+  - collection: pack
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: pack
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: pack_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: pack
+  - collection: pack_product
+    field: pack_id
+    meta:
+      junction_field: product_id
+      many_collection: pack_product
+      many_field: pack_id
+      one_allowed_collections: null
+      one_collection: pack
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: excluded_product
+      sort_field: null
+    related_collection: pack
+    schema:
+      column: pack_id
+      constraint_name: pack_product_pack_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: pack_product
+  - collection: pack_product
+    field: product_id
+    meta:
+      junction_field: pack_id
+      many_collection: pack_product
+      many_field: product_id
+      one_allowed_collections: null
+      one_collection: product
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: product
+    schema:
+      column: product_id
+      constraint_name: pack_product_product_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: pack_product
+  - collection: pack_product_type
+    field: pack_id
+    meta:
+      junction_field: product_type_id
+      many_collection: pack_product_type
+      many_field: pack_id
+      one_allowed_collections: null
+      one_collection: pack
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: required_product_type
+      sort_field: null
+    related_collection: pack
+    schema:
+      column: pack_id
+      constraint_name: pack_product_type_pack_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: pack_product_type
+  - collection: pack_product_type
+    field: product_type_id
+    meta:
+      junction_field: pack_id
       many_collection: pack_product_type
       many_field: product_type_id
-      one_collection: product_type
-      one_field: null
-      one_collection_field: null
       one_allowed_collections: null
-      junction_field: pack_id
-      sort_field: null
+      one_collection: product_type
+      one_collection_field: null
       one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: product_type
+    schema:
+      column: product_type_id
+      constraint_name: pack_product_type_product_type_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product_type
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: pack_product_type
+  - collection: product
+    field: product_type
+    meta:
+      junction_field: null
+      many_collection: product
+      many_field: product_type
+      one_allowed_collections: null
+      one_collection: product_type
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: product
+      sort_field: null
+    related_collection: product_type
+    schema:
+      column: product_type
+      constraint_name: product_product_type_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product_type
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: product
+  - collection: product
+    field: thumbnail
+    meta:
+      junction_field: null
+      many_collection: product
+      many_field: thumbnail
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_files
+    schema:
+      column: thumbnail
+      constraint_name: product_thumbnail_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_files
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: product
+  - collection: product
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: product
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: product_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: product
+  - collection: product
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: product
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: product_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: product
+  - collection: product_type
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: product_type
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: product_type_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: product_type
+  - collection: product_type
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: product_type
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: product_type_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: product_type
+  - collection: sell
+    field: session
+    meta:
+      junction_field: null
+      many_collection: sell
+      many_field: session
+      one_allowed_collections: null
+      one_collection: sessions
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: sells
+      sort_field: null
+    related_collection: sessions
+    schema:
+      column: session
+      constraint_name: sell_session_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sessions
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: sell
+  - collection: sell
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: sell
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: sell_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: sell
+  - collection: sell
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: sell
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: sell_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: sell
+  - collection: sell_pack
+    field: pack_id
+    meta:
+      junction_field: sell_id
+      many_collection: sell_pack
+      many_field: pack_id
+      one_allowed_collections: null
+      one_collection: pack
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: pack
+    schema:
+      column: pack_id
+      constraint_name: sell_pack_pack_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: pack
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: sell_pack
+  - collection: sell_pack
+    field: sell_id
+    meta:
+      junction_field: pack_id
+      many_collection: sell_pack
+      many_field: sell_id
+      one_allowed_collections: null
+      one_collection: sell
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: packs
+      sort_field: null
+    related_collection: sell
+    schema:
+      column: sell_id
+      constraint_name: sell_pack_sell_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sell
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: sell_pack
+  - collection: sell_product
+    field: product_id
+    meta:
+      junction_field: sell_id
+      many_collection: sell_product
+      many_field: product_id
+      one_allowed_collections: null
+      one_collection: product
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: product
+    schema:
+      column: product_id
+      constraint_name: sell_product_product_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: product
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: sell_product
+  - collection: sell_product
+    field: sell_id
+    meta:
+      junction_field: product_id
+      many_collection: sell_product
+      many_field: sell_id
+      one_allowed_collections: null
+      one_collection: sell
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: products
+      sort_field: null
+    related_collection: sell
+    schema:
+      column: sell_id
+      constraint_name: sell_product_sell_id_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: sell
+      on_delete: SET NULL
+      on_update: NO ACTION
+      table: sell_product
+  - collection: sessions
+    field: user_created
+    meta:
+      junction_field: null
+      many_collection: sessions
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_created
+      constraint_name: sessions_user_created_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: sessions
+  - collection: sessions
+    field: user_updated
+    meta:
+      junction_field: null
+      many_collection: sessions
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    related_collection: directus_users
+    schema:
+      column: user_updated
+      constraint_name: sessions_user_updated_foreign
+      foreign_key_column: id
+      foreign_key_schema: public
+      foreign_key_table: directus_users
+      on_delete: NO ACTION
+      on_update: NO ACTION
+      table: sessions
