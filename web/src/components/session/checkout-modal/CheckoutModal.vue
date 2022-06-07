@@ -42,7 +42,7 @@ import { useSellStore, DISCOUNT_VALUE } from '@/stores/sell';
 import { ref, watch } from 'vue';
 import { currencyFormat } from '@/utils/currency';
 
-const MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION = 2;
+const MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION = 1;
 
 const sellStore = useSellStore();
 
