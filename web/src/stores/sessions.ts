@@ -8,6 +8,7 @@ export const useSessionsStore = defineStore('sessions', {
     state: () => ({
         sessions: [] as Session[],
         currentSession: null as Session | null,
+        testSession: false,
     }),
     getters: {
         lastSession(state): Session | null {
@@ -24,6 +25,7 @@ export const useSessionsStore = defineStore('sessions', {
             }
         },
         async createSession() {
+            this.testSession = false;
             try {
                 const { create_sessions_item } = await createSession();
                 this.sessions.unshift(create_sessions_item);
@@ -33,6 +35,7 @@ export const useSessionsStore = defineStore('sessions', {
             }
         },
         selectLastSession() {
+            this.testSession = false;
             this.currentSession = this.lastSession;
         },
     },

@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue';
 import NotFound from '@/views/NotFound.vue';
 import Login from '@/views/Login.vue';
 import Session from '@/views/Session.vue';
+import TestSession from '@/views/TestSession.vue';
 
 const routes = [
     {
@@ -19,6 +20,11 @@ const routes = [
         path: '/session',
         name: 'session',
         component: Session,
+    },
+    {
+        path: '/test-session',
+        name: 'test-session',
+        component: TestSession,
     },
     {
         path: '/:catchAll(.*)',

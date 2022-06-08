@@ -39,12 +39,14 @@
 <script lang="ts" setup>
 import ProductDisplay from '@/components/session/checkout-modal/ProductDisplay.vue';
 import { useSellStore, DISCOUNT_VALUE } from '@/stores/sell';
+import { useSessionsStore } from '@/stores/sessions';
 import { ref, watch } from 'vue';
 import { currencyFormat } from '@/utils/currency';
 
 const MAX_PRODUCT_COUNT_FOR_OPENING_REDUCTION = 1;
 
 const sellStore = useSellStore();
+const sessionStore = useSessionsStore();
 
 const loading = ref(false);
 const error = ref<string | null>(null);
@@ -59,6 +61,17 @@ const props = defineProps<{
 }>();
 
 function handleValidatingClick() {
+    // If it's a test session, we don't need to validate the sell on the CMS
+    if (sessionStore.testSession) {
+        loading.value = true;
+        setTimeout(() => {
+            sellStore.cart = [];
+            loading.value = false;
+            emit('close');
+        }, Math.random() * 200);
+        return;
+    }
+
     loading.value = true;
     error.value = null;
     sellStore.confirmSell(openingReduction.value)

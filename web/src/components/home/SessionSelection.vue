@@ -12,6 +12,10 @@
                            class="border-primary"
                            title="Continuer la session précédente"
                            @click="handleChoiceClick('last')"/>
+            <router-link to="/test-session"
+                         class="p-4 mt-4 border-warning border-2 rounded-xl hover:scale-105 transition cursor-pointer select-none text-xl">
+                Démarrer une session test
+            </router-link>
             <a :href="ENDPOINT + '/admin/'"
                class="p-4 mt-4 border-accent border-2 rounded-xl hover:scale-105 transition cursor-pointer select-none text-xl">
                 Accéder à Directus
