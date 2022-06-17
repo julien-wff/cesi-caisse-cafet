@@ -56,6 +56,8 @@ services:
             CORS_ENABLED: "true"
             CORS_ORIGIN: "${WEB_CORS_ORIGIN}"
 
+            DISCORD_HOOK_ENDPOINT: "${DISCORD_HOOK_ENDPOINT}"
+
     web:
         container_name: cafet_web
         image: cefadrom/cesi-caisse-cafet:latest

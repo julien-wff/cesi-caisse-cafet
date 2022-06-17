@@ -22,10 +22,15 @@
             </a>
         </div>
     </div>
+
+    <DiscordMessagePopup :showDiscordModal="showDiscordModal"
+                         @close="showDiscordModal = false"
+                         @chose="handleDiscordPopupClick"/>
 </template>
 
 <script lang="ts" setup>
 import { ENDPOINT } from '@/api/client';
+import DiscordMessagePopup from '@/components/home/DiscordMessageModal.vue';
 import { computed, ref } from 'vue';
 import dayjs from 'dayjs';
 import { useRouter } from 'vue-router';
@@ -36,6 +41,7 @@ const sessionsStore = useSessionsStore();
 const router = useRouter();
 
 const loadingSession = ref(false);
+const showDiscordModal = ref(false);
 
 const lastSessionDate = computed(() =>
     dayjs(sessionsStore.lastSession?.date_updated || sessionsStore.lastSession?.date_created)
@@ -55,14 +61,18 @@ async function handleChoiceClick(choice: 'new' | 'last') {
     switch (choice) {
         case 'new':
             loadingSession.value = true;
-            await sessionsStore.createSession();
-            loadingSession.value = false;
+            showDiscordModal.value = true;
             break;
         case 'last':
             sessionsStore.selectLastSession();
+            await router.push('/session');
             break;
     }
+}
 
+async function handleDiscordPopupClick() {
+    await sessionsStore.createSession();
+    loadingSession.value = false;
     await router.push('/session');
 }
 </script>
