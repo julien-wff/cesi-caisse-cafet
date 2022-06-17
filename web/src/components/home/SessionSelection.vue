@@ -24,7 +24,7 @@
     </div>
 
     <DiscordMessagePopup :showDiscordModal="showDiscordModal"
-                         @close="showDiscordModal = false"
+                         @close="handleDiscordPopupClose"
                          @chose="handleDiscordPopupClick"/>
 </template>
 
@@ -68,6 +68,11 @@ async function handleChoiceClick(choice: 'new' | 'last') {
             await router.push('/session');
             break;
     }
+}
+
+function handleDiscordPopupClose() {
+    showDiscordModal.value = false;
+    loadingSession.value = false;
 }
 
 async function handleDiscordPopupClick() {
