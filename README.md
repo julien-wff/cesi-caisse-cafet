@@ -1,13 +1,11 @@
 # Caisse Cafet CESI
 
-
 ## À propos du projet
 
 Ce projet vise à créer un système de caisse en ligne pour la cafet.
 
 Le CMS Directus est utilisé pour la gestion des produits, types de produits et ventes. Une interface web est créée avec
 VueJS 3 et DaisyUI pour faire office de caisse enregistreuse, connectée au CMS.
-
 
 ## Développement
 
@@ -41,8 +39,8 @@ Ensuite, afin de démarrer la mise en production, lancer la commande `docker-com
 ### Lien avec l'extérieur
 
 Pour connecter le serveur web et le CMS à l'extérieur, il faut les lier à un reverse proxy qui va s'occuper de rediriger
-les requêtes en fonction du domaine. Typiquement, on pourra utiliser Nginx ou HaProxy (un exemple de configuration
-basique pour HaProxy est disponible dans `proxies/haproxy.cfg`).
+les requêtes en fonction du domaine. Typiquement, on pourra utiliser Nginx, HaProxy ou encore Caddy (des exemples de 
+configurations basiques pour HaProxy et Caddy sont disponibles dans le dossier `proxies`).
 
 On viendra donc connecter le serveur web à une URL (qui sera la principale) et le CMS à une autre URL (par exemple un
 sous-domaine).
@@ -71,7 +69,6 @@ container `cafet_directus` ne démarre pas, sinon les deux bases de données ser
 restaurer le schema directus si un dump est restauré (en prenant en compte que le dump est à jour au niveau du schéma).
 
 Comme pour le schéma, il faut que le container `cafet_postgresql` soit démarré afin de réaliser ces opérations.
-
 
 ## Troubleshooting
 

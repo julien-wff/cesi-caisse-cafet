@@ -1,0 +1,9 @@
+cafet.!WEB_HOST! {
+    reverse_proxy cafet-web:80
+    encode gzip
+}
+
+directus-cafet.!DIRECTUS_HOST! {
+    reverse_proxy cafet-directus:8055
+    encode gzip
+}
