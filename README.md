@@ -1,11 +1,13 @@
 # Caisse Cafet CESI
 
+
 ## À propos du projet
 
 Ce projet vise à créer un système de caisse en ligne pour la cafet.
 
 Le CMS Directus est utilisé pour la gestion des produits, types de produits et ventes. Une interface web est créée avec
 VueJS 3 et DaisyUI pour faire office de caisse enregistreuse, connectée au CMS.
+
 
 ## Développement
 
@@ -45,6 +47,7 @@ basique pour HaProxy est disponible dans `proxies/haproxy.cfg`).
 On viendra donc connecter le serveur web à une URL (qui sera la principale) et le CMS à une autre URL (par exemple un
 sous-domaine).
 
+
 ## Autres scripts
 
 ### Sauvegarde et restauration du schéma Directus
@@ -68,3 +71,16 @@ container `cafet_directus` ne démarre pas, sinon les deux bases de données ser
 restaurer le schema directus si un dump est restauré (en prenant en compte que le dump est à jour au niveau du schéma).
 
 Comme pour le schéma, il faut que le container `cafet_postgresql` soit démarré afin de réaliser ces opérations.
+
+
+## Troubleshooting
+
+### Cannot load directus extensions / uploads
+
+Il se peut que Directus n'arrive pas à charger les extensions ou les uploads, alors que les fichiers sont bien présents
+et au bon emplacement. Cela peut être dû à un problème de permissions des fichiers. Dans ce cas, il faut régler les
+permissions du dossier qui pose problème à l'aide de la commande `chown` :
+
+```bash
+sudo chown -R 1000:1000 ./directus/uploads
+```
