@@ -21,7 +21,7 @@ services:
 
     directus:
         container_name: cafet_directus
-        image: directus/directus:9.12.2
+        image: directus/directus:9.13.0
         hostname: cafet-directus
         volumes:
             - directus_uploads:/directus/uploads
