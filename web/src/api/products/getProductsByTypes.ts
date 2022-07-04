@@ -5,10 +5,10 @@ import { GraphQLClient } from '../client';
 export function getProductsByTypes() {
     return GraphQLClient.request<GetProductsByCategoriesResponse>(gql`
         query GetProductsByCategory {
-            product_type (filter: {product: {status: {_eq: "available"}}}) {
+            product_type (filter: {product: {status: {_eq: "available"}}}, sort: ["name"]) {
                 id
                 name
-                product(filter: { status: {_eq: "available"} }) {
+                product(filter: { status: {_eq: "available"} }, sort: ["name"]) {
                     id
                     status
                     name
