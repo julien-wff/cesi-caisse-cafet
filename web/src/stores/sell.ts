@@ -77,7 +77,7 @@ export const useSellStore = defineStore('sell', {
             const sellPrice = openingReduction ? 0 : this.totalPrice;
 
             try {
-                const { productsStock } = await createSell({
+                await createSell({
                     sessionID: sessionStore.currentSession!.id,
                     revenue,
                     buyPrice: this.buyPrice,
@@ -89,8 +89,9 @@ export const useSellStore = defineStore('sell', {
                     openingReduction,
                 });
                 // Update the products stock
-                for (const { id, stock } of productsStock) {
-                    productStore.updateStock(id, stock);
+                for (const { product, quantity } of this.cart) {
+                    if (product.stock_management_enabled)
+                        productStore.updateStock(product.id, product.stock - quantity);
                 }
                 // Reset the cart
                 this.cart = [];
