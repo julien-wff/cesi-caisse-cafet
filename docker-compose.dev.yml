@@ -8,6 +8,8 @@ services:
             - "5432:5432"
 
     directus:
+        image: directus/directus:${DIRECTUS_VERSION}
+        build: './directus'
         ports:
             - "8055:8055"
         volumes:

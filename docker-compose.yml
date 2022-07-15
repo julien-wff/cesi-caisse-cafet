@@ -21,12 +21,15 @@ services:
 
     directus:
         container_name: cafet_directus
-        image: directus/directus:9.13.0
         hostname: cafet-directus
+        image: "cefadrom/cesi-cafet-directus:${DIRECTUS_VERSION}"
+        build:
+            context: ./directus
+            args:
+                DIRECTUS_VERSION: "${DIRECTUS_VERSION}"
         volumes:
             - directus_uploads:/directus/uploads
             - ./directus/schema:/directus/schema
-            - ./directus/extensions:/directus/extensions
         networks:
             - cafet_web
             - cafet_internal

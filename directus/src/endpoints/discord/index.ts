@@ -1,12 +1,12 @@
-const fetch = require('node-fetch');
+import nodeFetch from 'node-fetch';
+import type { EndpointConfig, RequestWithAccountability } from '@types';
 
-
-module.exports = {
+export default {
     id: 'discord',
     handler: (router, context) => {
         const discord_url = context.env.DISCORD_HOOK_ENDPOINT;
 
-        router.get('/', async (req, res) => {
+        router.get('/', async (req: RequestWithAccountability, res) => {
             const user = req.accountability.user;
 
             if (!user) {
@@ -25,7 +25,7 @@ module.exports = {
             };
 
             try {
-                const discordRes = await fetch(discord_url, options);
+                const discordRes = await nodeFetch(discord_url, options);
 
                 res.sendStatus(discordRes.status);
             } catch (error) {
@@ -33,4 +33,4 @@ module.exports = {
             }
         });
     }
-};
+} as EndpointConfig;
