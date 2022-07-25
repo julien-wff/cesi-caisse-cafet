@@ -1,4 +1,5 @@
 import type { DisplayConfig } from '@types';
+import Test from './Test.vue';
 
 export default {
     id: 'currency',
@@ -6,6 +7,7 @@ export default {
     icon: 'monetization_on',
     description: 'Display a currency value',
     component: function ({ value }: { value: number }) {
+        console.log(Test);
         return new Intl.NumberFormat('fr-FR', {
             style: 'currency',
             currency: 'EUR',
