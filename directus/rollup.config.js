@@ -30,10 +30,17 @@ function getMigrations() {
 }
 
 
-/** @type { import('rollup').RollupOptions } */
-export default [
-    {
-        input: getExtensions(APP_EXTENSION_TYPES_PLURAL),
+const appInputs = getExtensions(APP_EXTENSION_TYPES_PLURAL);
+const apiInputs = getExtensions(API_EXTENSION_TYPES_PLURAL);
+const migrationInputs = getMigrations();
+
+
+/** @type { import('rollup').RollupOptions[] } */
+const builds = [];
+
+if (Object.keys(appInputs).length > 0)
+    builds.push({
+        input: appInputs,
         output: {
             dir: 'extensions',
             entryFileNames: '[name]/index.js',
@@ -58,9 +65,11 @@ export default [
         watch: {
             include: `src/@(${APP_EXTENSION_TYPES_PLURAL.join('|')})/**/*`,
         },
-    },
-    {
-        input: getExtensions(API_EXTENSION_TYPES_PLURAL),
+    });
+
+if (Object.keys(apiInputs).length > 0)
+    builds.push({
+        input: apiInputs,
         output: {
             dir: 'extensions',
             entryFileNames: '[name]/index.js',
@@ -84,9 +93,11 @@ export default [
         watch: {
             include: `src/@(${API_EXTENSION_TYPES_PLURAL.join('|')})/**/*`,
         },
-    },
-    {
-        input: getMigrations(),
+    });
+
+if (migrationInputs.length > 0)
+    builds.push({
+        input: migrationInputs,
         output: {
             dir: 'extensions/migrations',
             entryFileNames: '[name].js',
@@ -110,5 +121,6 @@ export default [
         watch: {
             include: `src/migrations/*.ts`,
         },
-    },
-];
+    });
+
+export default builds;
