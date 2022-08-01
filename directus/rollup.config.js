@@ -25,6 +25,10 @@ function getExtensions(extensionsTypes) {
         .reduce((list, path) => ({ ...list, [getExtensionNameFromPath(path)]: path }), {});
 }
 
+function getMigrations() {
+    return glob.sync(`./src/migrations/*.ts`);
+}
+
 
 /** @type { import('rollup').RollupOptions } */
 export default [
@@ -80,5 +84,31 @@ export default [
         watch: {
             include: `src/@(${API_EXTENSION_TYPES_PLURAL.join('|')})/**/*`,
         },
-    }
+    },
+    {
+        input: getMigrations(),
+        output: {
+            dir: 'extensions/migrations',
+            entryFileNames: '[name].js',
+            format: 'cjs',
+            exports: 'default',
+        },
+        external: API_SHARED_DEPS,
+        plugins: [
+            del({ targets: `extensions/migrations/*`, runOnce: true }),
+            typescript({ check: false }),
+            nodeResolve(),
+            commonjs({ sourceMap: false }),
+            json(),
+            replace({
+                values: {
+                    'process.env.NODE_ENV': JSON.stringify('production'),
+                },
+                preventAssignment: true,
+            }),
+        ],
+        watch: {
+            include: `src/migrations/*.ts`,
+        },
+    },
 ];
