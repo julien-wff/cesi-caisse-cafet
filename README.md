@@ -7,6 +7,11 @@ Ce projet vise à créer un système de caisse en ligne pour la cafet.
 Le CMS Directus est utilisé pour la gestion des produits, types de produits et ventes. Une interface web est créée avec
 VueJS 3 et DaisyUI pour faire office de caisse enregistreuse, connectée au CMS.
 
+![Page d'accueil](./screenshots/1-homepage.png)
+![Page de ventes](./screenshots/2-sell.png)
+![Produits](./screenshots/3-products.png)
+![Sessions](./screenshots/4-sessions.png)
+
 ## Développement
 
 ### Environnement
